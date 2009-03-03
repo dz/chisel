@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h2>{{ entry.title }}</h2>
+    <p>{{ entry.date }}</p>
+{% endblock %}
+
+{% block main %}
+    {{ entry.content }}
+{% endblock %}

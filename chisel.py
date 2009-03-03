@@ -86,7 +86,7 @@ def detail_pages(f, e):
     """Generate detail pages of individual posts"""
     template = e.get_template(TEMPLATES['detail'])
     for file in f:
-        write_file(file['url'], template.render(file))
+        write_file(file['url'], template.render(entry=f))
 
 @step
 def date_indices(f, e):

@@ -14,7 +14,7 @@
                 <ul class="month_block">
                     {% for day, day_list in month_list|groupby('day') %}
                         {% for entry in day_list %}
-                            <li><a href="/{{ entry.url }}">{{ entry.title }}</a> -- <small>{{ entry.date }}</small></li>
+                            <li><a href="/{{ entry.url }}">{{ entry.title }}</a> -- <small>{{ entry.pretty_date }}</small></li>
                         {% endfor %}
                     {% endfor %}
                 </ul>

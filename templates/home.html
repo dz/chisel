@@ -4,7 +4,7 @@
     {% for entry in entries %}
         <div class="entry">
             <h2><a href="/{{ entry.url }}">{{ entry.title }}</a></h2>
-            <h3>{{ entry.date }}</h3>
+            <h3>{{ entry.pretty_date }}</h3>
             <div class="entry_content">
                 {{ entry.content }}
             </div>

@@ -20,7 +20,7 @@ TEMPLATES = {
     'detail': "detail.html",
     'archive': "archive.html",
 }
-TIME_FORMAT = "%B %d, %Y - %I:%M %p"
+TIME_FORMAT = "%B %d, %Y"
 
 #FORMAT should be a callable that takes in text
 #and returns formatted text
@@ -43,16 +43,17 @@ def get_tree(source):
     for root, ds, fs in os.walk(source):
         for name in fs:
             path = os.path.join(root, name)
-            epoch = os.path.getmtime(path)
-            date = time.localtime(epoch)
-            year, month, day = map(int, date[:3])
             f = codecs.open(path, "r", encoding="utf-8")
+            title = f.readline()
+            date = time.strptime(f.readline().strip(), "%m/%d/%Y")
+            year, month, day = date[:3]
             files.append({
-                'title': f.readline(),
+                'title': title,
+                'epoch': time.mktime(date),
                 'content': FORMAT(''.join(f.readlines()[1:])),
                 'url': '/'.join([str(year), "%.2d" % month, "%.2d" % day, os.path.splitext(name)[0] + ".html"]),
-                'date': time.strftime(TIME_FORMAT, date),
-                'epoch': epoch,
+                'pretty_date': time.strftime(TIME_FORMAT, date),
+                'date': date,
                 'year': year,
                 'month': month,
                 'day': day,

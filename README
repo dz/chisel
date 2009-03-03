@@ -1,0 +1,66 @@
+Chisel
+David Zhou
+==========
+
+USAGE
+=====
+
+$ python chisel.py
+
+
+ADDING STEPS
+============
+
+Use the @step decorator.  The main loop passes in the master file list and jinja environment.
+
+
+SETTINGS
+========
+
+Change these settings:
+
+SOURCE:
+Location of source files for entries
+Must end in slash.  
+Example: SOURCE = "./blog/" 
+
+DESTINATION:
+Location to place generated files.
+Must end in slash.
+Example: DESTINATION = "./explort/"
+
+HOME_SHOW:
+Number of entries to show on homepage
+Example: HOME_SHOW = 15
+
+TEMPLATE_PATH:
+Path to folder where tempaltes live.
+Must end in slash.
+Example: TEMPLATE_PATH = "./templates/" 
+
+TEMPLATE_OPTIONS:
+Dictionary of options to give jinja2.
+Default: TEMPLATE_OPTIONS = {}
+
+TEMPLATES:
+Dictionary of templates.  
+Required keys: 'home', 'detail', 'archive'.
+Example: 
+        TEMPLATES = {
+            'home': "home.html",
+            'detail': "detail.html",
+            'archive': "archive.html",
+        }
+
+TIME_FORMAT:
+Format of human readable timestamp.
+Default: "%B %d, %Y - %I:%M %p"
+
+FORMAT:
+Callable that takes in text and returns formatted
+text.
+Default: FORMAT = lambda text: markdown.markdown(text, ['footnotes',]) 
+
+
+
+

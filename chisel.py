@@ -21,7 +21,7 @@ TEMPLATES = {
     'archive': "archive.html",
 }
 TIME_FORMAT = "%B %d, %Y"
-
+ENTRY_TIME_FORMAT = "%m/%d/%Y"
 #FORMAT should be a callable that takes in text
 #and returns formatted text
 FORMAT = lambda text: markdown.markdown(text, ['footnotes',]) 
@@ -45,7 +45,7 @@ def get_tree(source):
             path = os.path.join(root, name)
             f = codecs.open(path, "r", encoding="utf-8")
             title = f.readline()
-            date = time.strptime(f.readline().strip(), "%m/%d/%Y")
+            date = time.strptime(f.readline().strip(), ENTRY_TIME_FORMAT)
             year, month, day = date[:3]
             files.append({
                 'title': title,

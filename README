@@ -8,6 +8,23 @@ USAGE
 $ python chisel.py
 
 
+SAMPLE ENTRY
+===========
+
+sample.markdown:
+-------# start of file
+The First Line Contains the Title
+3/2/2009 <-- second line contains date. Must be in this format by default. Change via ENTRY_TIME_FORMAT setting.
+<a blank line separate title/date from post body>
+This is now the body of the post.  By default, the body is evaluated and parsed with markdown.
+Another line
+
+New paragraph
+
+Another paragraph
+-------# end of file
+
+
 ADDING STEPS
 ============
 
@@ -55,6 +72,10 @@ Example:
 TIME_FORMAT:
 Format of human readable timestamp.
 Default: "%B %d, %Y - %I:%M %p"
+
+ENTRY_TIME_FORMAT:
+Format of date declaration in second line of posts
+Default: "%m/%d/%Y"
 
 FORMAT:
 Callable that takes in text and returns formatted

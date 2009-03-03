@@ -49,7 +49,7 @@ def get_tree(source):
             year, month, day = date[:3]
             files.append({
                 'title': title,
-                'datestring': "%.4d%.2d%.2d" % (year, month, day),
+                'epoch': time.mktime(date),
                 'content': FORMAT(''.join(f.readlines()[1:]).decode('UTF-8')),
                 'url': '/'.join([str(year), "%.2d" % month, "%.2d" % day, os.path.splitext(name)[0] + ".html"]),
                 'pretty_date': time.strftime(TIME_FORMAT, date),
@@ -101,7 +101,7 @@ def date_indices(f, e):
 def main():
     print "Chiseling..."
     print "\tReading files...",
-    files = sorted(get_tree(SOURCE), cmp=lambda x,y: cmp(-int(x['datestring']), -int(y['datestring'])))
+    files = sorted(get_tree(SOURCE), cmp=lambda x,y: cmp(-x['epoch'], -y['epoch']))
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_PATH), **TEMPLATE_OPTIONS)
     print "Done."
     print "\tRunning steps..."

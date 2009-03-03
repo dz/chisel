@@ -27,7 +27,6 @@ ENTRY_TIME_FORMAT = "%m/%d/%Y"
 FORMAT = lambda text: markdown.markdown(text, ['footnotes',]) 
 #########
 
-
 STEPS = []
 
 def step(func):
@@ -42,15 +41,16 @@ def get_tree(source):
     files = []
     for root, ds, fs in os.walk(source):
         for name in fs:
+            if name[0] == ".": continue
             path = os.path.join(root, name)
-            f = codecs.open(path, "r", encoding="utf-8")
+            f = open(path, "rU")
             title = f.readline()
             date = time.strptime(f.readline().strip(), ENTRY_TIME_FORMAT)
             year, month, day = date[:3]
             files.append({
                 'title': title,
-                'epoch': time.mktime(date),
-                'content': FORMAT(''.join(f.readlines()[1:])),
+                'datestring': "%.4d%.2d%.2d" % (year, month, day),
+                'content': FORMAT(''.join(f.readlines()[1:]).decode('UTF-8')),
                 'url': '/'.join([str(year), "%.2d" % month, "%.2d" % day, os.path.splitext(name)[0] + ".html"]),
                 'pretty_date': time.strftime(TIME_FORMAT, date),
                 'date': date,
@@ -66,8 +66,8 @@ def write_file(url, data):
     dirs = os.path.dirname(path)
     if not os.path.isdir(dirs):
         os.makedirs(dirs)
-    file = codecs.open(path, "w", encoding="utf-8")
-    file.write(data)
+    file = open(path, "w")
+    file.write(data.encode('UTF-8'))
     file.close()
 
 @step
@@ -101,10 +101,9 @@ def date_indices(f, e):
 def main():
     print "Chiseling..."
     print "\tReading files...",
-    files = sorted(get_tree(SOURCE), lambda x,y: not cmp(x['epoch'], y['epoch']))
+    files = sorted(get_tree(SOURCE), cmp=lambda x,y: cmp(-int(x['datestring']), -int(y['datestring'])))
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_PATH), **TEMPLATE_OPTIONS)
     print "Done."
-
     print "\tRunning steps..."
     for step in STEPS:
         print "\t\t",

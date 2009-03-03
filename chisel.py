@@ -57,9 +57,16 @@ def get_tree(source):
                 'year': year,
                 'month': month,
                 'day': day,
+                'filename': name,
             })
             f.close()
     return files
+
+def compare_entries(x, y):
+    result = cmp(-x['epoch'], -y['epoch'])
+    if result == 0:
+        return -cmp(x['filename'], y['filename'])
+    return result
 
 def write_file(url, data):
     path = DESTINATION + url
@@ -89,19 +96,10 @@ def detail_pages(f, e):
     for file in f:
         write_file(file['url'], template.render(entry=file))
 
-@step
-def date_indices(f, e):
-    """
-    Generate date indices for all year, month, days
-    permutations. Example: "/2009/02/"
-    """
-    pass
-
-
 def main():
     print "Chiseling..."
     print "\tReading files...",
-    files = sorted(get_tree(SOURCE), cmp=lambda x,y: cmp(-x['epoch'], -y['epoch']))
+    files = sorted(get_tree(SOURCE), cmp=compare_entries)
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_PATH), **TEMPLATE_OPTIONS)
     print "Done."
     print "\tRunning steps..."

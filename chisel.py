@@ -6,7 +6,7 @@
 # Requires:
 # jinja2
 
-import sys, re, time, os
+import sys, re, time, os, codecs
 import jinja2, markdown
 
 #Settings
@@ -46,7 +46,7 @@ def get_tree(source):
             epoch = os.path.getmtime(path)
             date = time.localtime(epoch)
             year, month, day = map(int, date[:3])
-            f = open(path, "r")
+            f = codecs.open(path, "r", encoding="utf-8")
             files.append({
                 'title': f.readline(),
                 'content': FORMAT(''.join(f.readlines()[1:])),
@@ -65,7 +65,7 @@ def write_file(url, data):
     dirs = os.path.dirname(path)
     if not os.path.isdir(dirs):
         os.makedirs(dirs)
-    file = open(path, "w")
+    file = codecs.open(path, "w", encoding="utf-8")
     file.write(data)
     file.close()
 

@@ -10,8 +10,8 @@ import sys, re, time, os, codecs
 import jinja2, markdown
 
 #Settings
-SOURCE = "./blog/" #end with slash
-DESTINATION = "./export/" #end with slash
+SOURCE = "../posts/" #end with slash
+DESTINATION = "../www/" #end with slash
 HOME_SHOW = 15 #numer of entries to show on homepage
 TEMPLATE_PATH = "./templates/"
 TEMPLATE_OPTIONS = {}

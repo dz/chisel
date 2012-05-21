@@ -142,15 +142,13 @@ Use the @step decorator. The main loop passes in the master file list and jinja 
 	Callable that takes in text and returns formatted text (without Smartypants). 
 	Default: FORMAT = lambda text: markdown.markdown(text, ['footnotes',]) 
 
-## Can I use this to run a site locally, like for an offline site?
+## Can I use this to run a site locally, like offline?
 
-Yes!
+Yes! Just navigate to `~/site/www` and run the following to start a simple HTTP server in Terminal:
 
-Just navigate to `~/site/www` and run the following to start a simple HTTP server:
+	$ python -m SimpleHTTPServer
 
-	python -m SimpleHTTPServer
-
-Then point your browser to: `http://localhost:8000` and your site is live on your computer.
+Then, point your browser to: `http://localhost:8000` and your site is live on your computer.
 
 [dz]: https://github.com/dz
 [ch]: https://github.com/ckunte/chisel

@@ -2,6 +2,10 @@
 
 Written by [David Zhou][dz] in [python][py], and forked by [ckunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file.
 
+## Screenshot
+
+![](http://media.tumblr.com/tumblr_m4bk9eWsj91qawedd.png)
+
 ## How it works
 
 1. Write your post in Markdown, save it as `post-title.markdown` in a designated folder, say, `posts`. 
@@ -142,3 +146,6 @@ Use the @step decorator. The main loop passes in the master file list and jinja 
 [jg]: http://daringfireball.net/ "John Gruber"
 [p2]: http://pypi.python.org/pypi/PyRSS2Gen
 [ck]: https://github.com/ckunte
+[rsync]: http://en.wikipedia.org/wiki/Rsync
+[git]: http://git-scm.com
+

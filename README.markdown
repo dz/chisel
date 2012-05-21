@@ -7,6 +7,7 @@ This fork includes the following over David's original script:
 - Smartypants content parsing to emit typographically nicer quotes, proper em and en dashes, etc.
 - A shorter (just year based) permalink structure.
 - RSS feed generator script (Hat-tip: [Ronan Jouchet][rj]).
+- Support for title less posts (like for links and quotes).
 
 ## Screenshot
 
@@ -140,6 +141,16 @@ Use the @step decorator. The main loop passes in the master file list and jinja 
 	FORMAT:
 	Callable that takes in text and returns formatted text (without Smartypants). 
 	Default: FORMAT = lambda text: markdown.markdown(text, ['footnotes',]) 
+
+## Can I use this to run a site locally, like for an offline site?
+
+Yes!
+
+Just navigate to `~/site/www` and run the following to start a simple HTTP server:
+
+	python -m SimpleHTTPServer
+
+Then point your browser to: `http://localhost:8000` and your site is live on your computer.
 
 [dz]: https://github.com/dz
 [ch]: https://github.com/ckunte/chisel

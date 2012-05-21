@@ -1,14 +1,21 @@
 {% extends "base.html" %}
 
-{% block main %}
+{% block post %}
     {% for entry in entries %}
-        <div class="entry">
-            <h2><a href="/{{ entry.url }}">{{ entry.title }}</a></h2>
-            <h3>{{ entry.pretty_date }}</h3>
-            <div class="entry_content">
-                {{ entry.content }}
-            </div>
-            <p class="permalink"><a href="/{{ entry.url}}">#permalink</a></p>
-        </div>
+	<div class="post">
+ 		<div class="labels">
+ 			<div class="date"><a href="/{{ entry.url }}">{{ entry.pretty_date }}</a></div>
+ 		</div>
+
+ 		<div class="regular">
+    		<h2>{{ entry.title }}</h2>
+		    {{ entry.content }}
+    	</div>
+
+    	<div class="post-footer">&nbsp;</div>
+    </div>
     {% endfor %}
+<div class="navleft">
+	&lsaquo;&nbsp;<a rel="prev prefetch" href="/archive.html">Archive</a>
+</div>
 {% endblock %}

@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 
-{% block header %}
-    <h2>{{ entry.title }}</h2>
-    <p>{{ entry.pretty_date }}</p>
-{% endblock %}
+{% block post %}
+	<div class="post">
+ 		<div class="labels">
+ 			<div class="date"><a href="/{{ entry.url }}">{{ entry.pretty_date }}</a></div>
+ 		</div>
 
-{% block main %}
-    {{ entry.content }}
+ 		<div class="regular">
+ 			{% if entry.title != '' %}
+    			<h2>{{ entry.title }}</h2>
+    		{% endif %}
+		    	{{ entry.content }}
+    	</div>
+
+    	<div class="post-footer">&nbsp;</div>
+    </div>
 {% endblock %}

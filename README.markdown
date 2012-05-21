@@ -78,7 +78,7 @@ Open `chisel.py` in a text editor and have a look at the section Settings. You m
 
 ## Sample Entry
 
-sample.markdown:
+`sample.markdown` (Note: Filenames shall not have spaces. Good examples: `hotel-california.markdown`, `i_love_cooking.markdown`, and so on):
 
 	Title of the post
 	3/14/1879
@@ -95,6 +95,15 @@ The very simple post entry format, shown above, is as follows:
 - Line 2: Enter date in m/d/Y format.
 - Line 3: Blank line.
 - Line 4: Content in Markdown here onward.
+
+### Also want daringfireball.net like posts (for quotes, and links) without titles?
+
+Pretty easy. Leave the first line blank in the above entry format, but remember to provide a filename. Jinja2 template (see `templates/detail.html`) below looks for a post title, and does not produce one, if it finds none. (The permalink URL is dependent on filename -- not the post title.)
+
+	{% if entry.title != '' %}
+		<h2>{{ entry.title }}</h2>
+	{% endif %}
+	{{ entry.content }}
 
 ### Adding Steps
 

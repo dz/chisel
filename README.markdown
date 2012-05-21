@@ -151,7 +151,7 @@ Use the @step decorator. The main loop passes in the master file list and jinja 
 [pt]: http://www.pocoo.org/ "Led by Georg Brandl and Armin Ronacher."
 [jg]: http://daringfireball.net/ "John Gruber"
 [p2]: http://pypi.python.org/pypi/PyRSS2Gen
-[ck]: https://github.com/ckunte
+[ck]: http://log.ckunte.net/post/23035004950/chisel "Tinkering Chisel"
 [rsync]: http://en.wikipedia.org/wiki/Rsync
 [git]: http://git-scm.com
 [rj]: https://github.com/ronjouch

@@ -2,6 +2,12 @@
 
 Written by [David Zhou][dz] in [python][py], and forked by [ckunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file.
 
+This fork includes the following over David's original script:
+
+- Smartypants content parsing to emit typographically nicer quotes, proper em and en dashes, etc.
+- A shorter (just year based) permalink structure.
+- RSS feed generator script (Hat-tip: [Ronan Jouchet][rj]).
+
 ## Screenshot
 
 ![](http://media.tumblr.com/tumblr_m4bk9eWsj91qawedd.png)
@@ -148,4 +154,5 @@ Use the @step decorator. The main loop passes in the master file list and jinja 
 [ck]: https://github.com/ckunte
 [rsync]: http://en.wikipedia.org/wiki/Rsync
 [git]: http://git-scm.com
+[rj]: https://github.com/ronjouch
 

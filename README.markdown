@@ -135,7 +135,7 @@ The very simple post entry format, shown above, is as follows:
 
 ### Also want daringfireball.net like posts (for quotes, and links) without titles?
 
-Pretty easy. Leave the first line blank in the above entry format, but remember to provide a filename. Jinja2 template (see `templates/detail.html`) below looks for a post title, and does not produce one, if it finds none. (The permalink URL is dependent on filename -- not the post title.)
+Pretty easy. Leave the first line blank in the above entry format. Jinja2 template (see `templates/detail.html`) below looks for a post title, and does not produce one, if it finds none. (The permalink URL is dependent on filename -- not the post title.)
 
 	{% if entry.title != '' %}
 		<h2>{{ entry.title }}</h2>

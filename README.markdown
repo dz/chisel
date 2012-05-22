@@ -176,6 +176,28 @@ Yes! Just navigate to `~/site/www` and run the following to start a simple HTTP 
 
 Then, point your browser to: `http://localhost:8000` and your site is live on your computer.
 
+## I have a large number of posts in WordPress. How do I convert?
+
+Have a look at Thomas Frössman's tool, [exitwp][ep]. While it's written primarily for Jekyll, it does a very good job of converting all WordPress posts to Markdown post -- one file per post. Each post thus converted shows some preformatted lines in the beginning. much of which you don't need in Chisel (You only require Title and Date in the format illustrated above.) You could either manually edit each markdown file, or you could fork Thomas's exitwp and change the following lines (between line 253 and 259) from
+
+	yaml_header = {
+          'title': i['title'],
+          'date': i['date'],
+          'slug': i['slug'],
+          'status': i['status'],
+          'wordpress_id': i['wp_id'],
+        }
+
+to
+
+       yaml_header = {
+          i['title'],
+          i['date'],
+        }
+
+Further, the date would need a fix to read as m/d/Y. But at least for now, it reduces your edits to just changing dates. Or you could write a shell script to grep and chuck out needless information generated for Jekyll to suit Chisel.
+
+[ep]: https://github.com/thomasf/exitwp
 [dz]: https://github.com/dz
 [ch]: https://github.com/ckunte/chisel
 [ftp]: http://panic.com/transmit/

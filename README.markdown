@@ -83,6 +83,8 @@ Now download Chisel as a zip file or via git (`git clone git://github.com/ckunte
 
 While it is not required, keeping `chisel`, `posts`, and `www` separate is a good idea. It helps keep chisel folders clean (for future updates), aside from keeping the tool separated from the content you create using it (`posts`, and `www`).
 
+### Updating Settings to suit
+
 Open `chisel.py` in a text editor and have a look at the section Settings. You may need to update the following:
 
 	# Settings
@@ -108,6 +110,7 @@ Open `chisel.py` in a text editor and have a look at the section Settings. You m
 
 ## Usage
 
+	$ cd ~/site/chisel
 	$ python chisel.py
 
 ## Sample Entry

@@ -195,8 +195,9 @@ to
           i['date'],
         }
 
-Further, the date would need a fix to read as m/d/Y. But at least for now, it reduces your edits to just changing dates. Or you could write a shell script to grep and chuck out needless information generated for Jekyll to suit Chisel.
+Further, the date would need a fix to read as m/d/Y. But at least for now, it reduces your edits to just changing dates. Or you could write a [shell script][ss] to chuck out needless information generated for Jekyll to suit Chisel.
 
+[ss]: http://www.cyberciti.biz/faq/unix-linux-replace-string-words-in-many-files/
 [ep]: https://github.com/thomasf/exitwp
 [dz]: https://github.com/dz
 [ch]: https://github.com/ckunte/chisel

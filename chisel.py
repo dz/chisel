@@ -29,6 +29,7 @@ TEMPLATES = {
     'home': "home.html",
     'detail': "detail.html",
     'archive': "archive.html",
+    'colophon': "colophon.html",
 }
 TIME_FORMAT = "%b %d, %Y"
 ENTRY_TIME_FORMAT = "%m/%d/%Y"
@@ -112,6 +113,12 @@ def master_archive(f, e):
     """Generate master archive list of all entries"""
     template = e.get_template(TEMPLATES['archive'])
     write_file("archive.html", template.render(entries=f))
+
+@step
+def generate_colophon(f, e):
+    """Generate an about page"""
+    template = e.get_template(TEMPLATES['colophon'])
+    write_file("colophon.html", template.render(entries=f))
 
 @step
 def detail_pages(f, e):

@@ -168,6 +168,21 @@ Use the @step decorator. The main loop passes in the master file list and jinja 
 	Callable that takes in text and returns formatted text (without Smartypants). 
 	Default: FORMAT = lambda text: markdown.markdown(text, ['footnotes',]) 
 
+Here's an example of a @step decorator added to chisel.py to generate a colophon page:
+
+First add the following to TEMPLATES list above:
+
+	            'colophon': "colophon.html",	
+
+Then, add this below in chisel.py code:
+
+	@step
+	def generate_colophon(f, e):
+	    """Generate an about page"""
+	    template = e.get_template(TEMPLATES['colophon'])
+	    write_file("colophon.html", template.render(entries=f))
+
+
 ## Can I use this to run a site locally, like offline?
 
 Yes! Just navigate to `~/site/www` and run the following to start a simple HTTP server in Terminal:

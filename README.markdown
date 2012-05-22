@@ -9,6 +9,10 @@ This fork includes the following over David's original script:
 - RSS feed generator script (Hat-tip: [Ronan Jouchet][rj]).
 - Support for [title-less posts][tl] (like for links and quotes).
 
+## Screenshot
+
+![](http://media.tumblr.com/tumblr_m4bk9eWsj91qawedd.png)
+
 ### What it does not do
 
 Chisel keeps it simple and stupid. And so, there is
@@ -20,15 +24,11 @@ Chisel keeps it simple and stupid. And so, there is
 
 - No loss of fidelity. All your posts would be plain text, which kind of makes it timeless. Great for archiving. Burn on a CD, or save it on a USB stick.
 - You can regenerate your entire site again if you just have native markdown draft posts, and Chisel + templates.
-- It's incredibly lightweight -- less than 8kB! (Compare that with anything out there, and they all seem like they weight a ton, not to mention the complexity of install, maintain, and backup.)
+- It's incredibly lightweight -- less than 8kB! (Compare that with anything out there, and they all seem like they weigh a ton, not to mention the complexity of install, maintain, and backup.)
 - Zero security issues. Generate site locally, and upload only the thus created html files out of markdown post drafts. 
 - Pure static site. Pretty robust to network spikes, and heavy loads. No server-side scripting ensures no overload.
 - Helps you blog offline, run your own private blog, information system, if you don't want to host it on the web, and still have a web like interface.
 - Written in python: Simple to understand, simple to modify, but most of all, simpler to use. (Knowledge of python is not required, except for installation, which is explained in detail below.)
-
-## Screenshot
-
-![](http://media.tumblr.com/tumblr_m4bk9eWsj91qawedd.png)
 
 ## How it works
 

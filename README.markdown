@@ -49,10 +49,16 @@ If you are using a Mac or Linux, then python comes pre-installed. In addition, y
 3. [Smartypants][sp] is a typographical enhancer, also by [John Gruber][jg].
 4. [PyRSS2Gen][p2] is a library for generating RSS feeds.
 
-Install these on a Mac via pip -- python package installer:
+Install these on a [Mac OS X][m] via [pip][] -- python package installer:
 
 	$ sudo easy_install pip
-	$ Password:
+	Password:
+	$ sudo pip install jinja2 markdown mdx_smartypants PyRSS2Gen
+	
+On [Ubuntu][u] (Debian) linux:
+
+	$ sudo apt-get install pip-python
+	Password:
 	$ sudo pip install jinja2 markdown mdx_smartypants PyRSS2Gen
 
 ## Create a site structure on your computer (This is just an example)
@@ -182,3 +188,6 @@ Then, point your browser to: `http://localhost:8000` and your site is live on yo
 [git]: http://git-scm.com
 [rj]: https://github.com/ronjouch
 [tl]: https://github.com/ckunte/chisel/blob/master/README.markdown#also-want-daringfireballnet-like-posts-for-quotes-and-links-without-titles
+[u]: http://www.ubuntu.com/
+[m]: http://www.apple.com/macosx
+[pip]: http://pypi.python.org/pypi/pip

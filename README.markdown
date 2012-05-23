@@ -18,6 +18,7 @@ This fork includes the following over David's original script:
 Chisel keeps it simple and stupid. And so, there is
 
 - No taxonomy support, i.e., no categories, and no tags.
+- No plugin support.
 - No built-in search. (When you carry an entire copy of your site on your hard drive, I think you don't need one; use grep, Spotlight or find instead. If you are inclined to create a search, go ahead and do it. It isn't too complicated. Just like populating the RSS feed file or the Archive file, it is possible to update an index for new posts in a JSON enclosure, and query it.)
 
 ### What it does best

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block title %}: {{entry.title}} {% endblock %}
 
 {% block post %}
 	<div class="post">
@@ -12,7 +13,8 @@
     		{% endif %}
 		    	{{ entry.content }}
     	</div>
-
-    	<div class="post-footer">&nbsp;</div>
     </div>
+	<div class="navleft">
+		&lsaquo;&nbsp;<a rel="prev prefetch" href="/archive.html">Archive</a>
+	</div>
 {% endblock %}

@@ -19,7 +19,7 @@ import jinja2, markdown, mdx_smartypants, PyRSS2Gen
 import datetime
 
 #Settings
-BASEURL = "http://localhost/" #end with slash
+BASEURL = "http://log.ckunte.net/" #end with slash
 SOURCE = "../posts/" #end with slash
 DESTINATION = "../www/" #end with slash
 HOME_SHOW = 15 #numer of entries to show on homepage

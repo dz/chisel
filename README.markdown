@@ -8,6 +8,7 @@ This fork includes the following over David's original script:
 - A shorter (just year based) permalink structure.
 - RSS feed generator script (Hat-tip: [Ronan Jouchet][rj]).
 - Support for [title-less posts][tl] (like for links and quotes).
+- Support for Page titles in title tag for permalinks added in templates.
 
 ## Screenshot
 

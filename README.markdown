@@ -84,6 +84,8 @@ Now download Chisel as a zip file or via git (`git clone git://github.com/ckunte
 
 While it is not required, keeping `chisel`, `posts`, and `www` separate is a good idea. It helps keep chisel folders clean (for future updates), aside from keeping the tool separated from the content you create using it (`posts`, and `www`).
 
+Remember to open and edit templates, particularly `base.html` as it contains site name, description and other `meta` into in the `<head>` section hard-coded. In addition, you will need to update the settings below.
+
 ### Updating Settings to suit
 
 Open `chisel.py` in a text editor and have a look at the section Settings. You may need to update the following:

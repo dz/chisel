@@ -19,7 +19,7 @@ import jinja2, markdown, mdx_smartypants, PyRSS2Gen
 import datetime
 
 #Settings
-BASEURL = "http://log.ckunte.net/" #end with slash
+BASEURL = "http://ckunte.github.com/" #end with slash
 SOURCE = "../posts/" #end with slash
 DESTINATION = "../www/" #end with slash
 HOME_SHOW = 15 #numer of entries to show on homepage
@@ -37,7 +37,7 @@ ENTRY_TIME_FORMAT = "%m/%d/%Y"
 #and returns formatted text
 FORMAT = lambda text: markdown.markdown(text, ['footnotes','smartypants',])
 RSS = PyRSS2Gen.RSS2(
-    title = "Windmill",
+    title = "Logbook",
     link = BASEURL + "feed.xml",
     description = "Offshore structures engineer",
     lastBuildDate = datetime.datetime.now(),

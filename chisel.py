@@ -19,10 +19,21 @@ import jinja2, markdown, mdx_smartypants, PyRSS2Gen
 import datetime
 
 #Settings
-BASEURL = "http://ckunte.github.com/" #end with slash
-SOURCE = "../posts/" #end with slash
-DESTINATION = "../www/" #end with slash
-HOME_SHOW = 15 #numer of entries to show on homepage
+# For folders that look like the following (this is primarily 
+# done to keep native post files and the generated html files 
+# separate; don't have to be -- just my personal preference):
+# Sites
+#     /chisel (the generator)
+#     /posts (markdown post files)
+#     /ckunte.github.com (the generated html site from post files)
+# the locations are used thus:
+#
+BASEURL = "http://log.ckunte.net/" #end with slash
+# The following tells chisel where to look for native posts:
+SOURCE = "../ckunte.github.com/_posts/" #end with slash
+#  The following tells chisel where to generate site:
+DESTINATION = "../ckunte.github.com/" #end with slash
+HOME_SHOW = 3 #numer of entries to show on homepage
 TEMPLATE_PATH = "./templates/"
 TEMPLATE_OPTIONS = {}
 TEMPLATES = {
@@ -38,7 +49,7 @@ ENTRY_TIME_FORMAT = "%m/%d/%Y"
 FORMAT = lambda text: markdown.markdown(text, ['footnotes','smartypants',])
 RSS = PyRSS2Gen.RSS2(
     title = "Logbook",
-    link = BASEURL + "feed.xml",
+    link = BASEURL + "rss.xml",
     description = "Offshore structures engineer",
     lastBuildDate = datetime.datetime.now(),
     items = [])
@@ -106,7 +117,7 @@ def generate_rss(f, e):
     """Generate rss"""
     for file in f[:10]:
         RSS.items.append(PyRSS2Gen.RSSItem(title=file['title'], link=BASEURL + file['url'], description=file['content'], author="ckunte", guid = PyRSS2Gen.Guid(BASEURL + file['url']), pubDate=datetime.datetime(file['year'], file['month'], file['day'])))
-    RSS.write_xml(open(DESTINATION + "feed.xml", "w"))
+    RSS.write_xml(open(DESTINATION + "rss.xml", "w"))
 
 @step
 def master_archive(f, e):

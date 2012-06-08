@@ -227,7 +227,7 @@ Further, the date would need a fix to read as m/d/Y. But at least for now, it re
 [pt]: http://www.pocoo.org/ "Led by Georg Brandl and Armin Ronacher."
 [jg]: http://daringfireball.net/ "John Gruber"
 [p2]: http://pypi.python.org/pypi/PyRSS2Gen
-[ck]: http://log.ckunte.net/post/23035004950/chisel "Tinkering Chisel"
+[ck]: http://log.ckunte.net/2012/chisel.html "Tinkering Chisel"
 [rsync]: http://en.wikipedia.org/wiki/Rsync
 [git]: http://git-scm.com
 [rj]: https://github.com/ronjouch

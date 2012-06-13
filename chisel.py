@@ -24,13 +24,13 @@ import datetime
 # separate; don't have to be -- just my personal preference):
 # Sites
 #     /chisel (the generator)
-#     /posts (markdown post files)
+#     /ckunte.github.com/posts (markdown post files)
 #     /ckunte.github.com (the generated html site from post files)
 # the locations are used thus:
 #
 BASEURL = "http://log.ckunte.net/" #end with slash
 # The following tells chisel where to look for native posts:
-SOURCE = "../ckunte.github.com/_posts/" #end with slash
+SOURCE = "../ckunte.github.com/posts/" #end with slash
 #  The following tells chisel where to generate site:
 DESTINATION = "../ckunte.github.com/" #end with slash
 HOME_SHOW = 3 #numer of entries to show on homepage

@@ -12,7 +12,7 @@ This fork includes the following over David's original script:
 
 ## Screenshot
 
-![](http://media.tumblr.com/tumblr_m4bk9eWsj91qawedd.png)
+![](http://log.ckunte.net/images/chisel.png)
 
 ### What it does not do
 

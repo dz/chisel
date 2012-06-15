@@ -12,7 +12,8 @@ This fork includes the following over David's original script:
 
 ## Screenshot
 
-![](http://log.ckunte.net/images/chisel.png)
+- [Screenshot][scr].
+- [Live site example][log].
 
 ### What it does not do
 
@@ -235,3 +236,5 @@ Further, the date would need a fix to read as m/d/Y. But at least for now, it re
 [u]: http://www.ubuntu.com/
 [m]: http://www.apple.com/macosx
 [pip]: http://pypi.python.org/pypi/pip
+[scr]: http://log.ckunte.net/images/chisel.png
+[log]: http://log.ckunte.net/

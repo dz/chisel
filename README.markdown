@@ -9,6 +9,7 @@ This fork includes the following over David's original script:
 - RSS feed generator script (Hat-tip: [Ronan Jouchet][rj]).
 - Support for [title-less posts][tl] (like for links and quotes).
 - Support for Page titles in title tag for permalinks added in templates.
+- Supports [clean URLs][cu].
 
 ## Screenshot
 
@@ -238,3 +239,4 @@ Further, the date would need a fix to read as m/d/Y. But at least for now, it re
 [pip]: http://pypi.python.org/pypi/pip
 [scr]: http://log.ckunte.net/images/chisel.png
 [log]: http://log.ckunte.net/
+[cu]: http://log.ckunte.net/2012/rewrite

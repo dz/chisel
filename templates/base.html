@@ -6,11 +6,11 @@
      <meta name="author" content="Chyetanya Kunte">
      <meta name="description" content="A personal site of Chyetanya Kunte.">
      <link rel="apple-touch-icon-precomposed" href="/images/avatar.png" />
-     <link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon">
+     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
      <meta name="robots" content="index, follow, noarchive, noimageindex, noimageclick">
      <meta name="viewport" content="width=702">
      <link rel="stylesheet" href="/css/style.css" type="text/css">
-     <link rel="alternate" type="application/rss+xml" title="Logbook RSS" href="/rss.xml">
+     <link rel="alternate" type="application/rss+xml" title="Logbook" href="/rss.xml">
  	 <meta name="y_key" content="97c7f89953fc7f59">
  	 <meta name="google-site-verification" content="v-I00TV-8pMM0mspIOJAXlWwaEdkafJZPzS9LC3r3zc">
  	 <script type="text/javascript">
@@ -34,11 +34,14 @@
             <p class="spacer">&nbsp;</p>
             <div id="left">
                 <div id="nav">
-                <ul>
-                    <li><a href="/colophon.html" title="About this site">Colophon</a></li>
-                    <li><a href="https://github.com/ckunte" title="Code">Code</a></li>
-                    <li><a href="/rss.xml" title="RSS">RSS</a></li>
-                </ul>
+                    <ul>
+                    {% for href, caption, description in [
+                        ('/colophon', 'Colophon', 'About this site.'), 
+                        ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), 
+                        ('/rss.xml', 'RSS', 'Logbook')] -%}
+                        <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
+                    {% endfor -%}
+                    </ul>
                 </div><!-- /nav -->
             </div><!-- /left -->
 
@@ -48,7 +51,7 @@
             {% endblock %}
         </div>
         <div id="footer">
-            <span class="navcenter">powered by <a href="https://github.com/ckunte/chisel">Chisel</a></span>
+            <span class="navcenter">(c) Chyetanya Kunte. powered by <a href="https://github.com/ckunte/chisel">Chisel</a></span>
         </div>
     </div>
 </body>

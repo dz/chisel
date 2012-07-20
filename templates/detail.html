@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}: {{entry.title}} {% endblock %}
+{% block title %}: {{entry.title}} {% endblock -%}
 
 {% block post %}
 	<div class="post">
@@ -8,13 +8,13 @@
  		</div>
 
  		<div class="regular">
- 			{% if entry.title != '' %}
+ 			{% if entry.title %}
     			<h2>{{ entry.title }}</h2>
     		{% endif %}
 		    	{{ entry.content }}
     	</div>
     </div>
 	<div class="navleft">
-		&lsaquo;&nbsp;<a rel="prev prefetch" href="/archive.html">Archive</a>
+		&lsaquo;&nbsp;<a rel="prev prefetch" href="/archive">Archive</a>
 	</div>
 {% endblock %}

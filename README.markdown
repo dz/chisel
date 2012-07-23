@@ -1,8 +1,8 @@
 # Chisel
 
-Written by [David Zhou][dz] in [python][py], and forked by [ckunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file.
+Written by [David Zhou][dz] in [python][py], forked and enhanced by [ckunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file.
 
-This fork includes the following over David's original script:
+This fork includes the following additions and enhancements:
 
 - Smartypants content parsing to emit typographically nicer quotes, proper em and en dashes, etc.
 - A shorter (just year based) permalink structure.

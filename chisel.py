@@ -4,12 +4,12 @@
 # Chisel
 # David Zhou, github.com/dz
 #
-# Updates and mods:
+# Updates and enhancements added/included by ckunte:
 # 14.05.2012:
 # - RSS feed generator script, hat-tip: Ronan Jouchet, github.com/ronjouch
 # - Smartypants content parsing included by ckunte, github.com/ckunte
 # - Permalink url updated to include only the year followed by post title, 
-#   i.e., http://staticsite.com/2012/post.html
+#   i.e., http://staticsite.com/2012/post.html or http://staticsite.com/2012/post
 #
 # Requires:
 # jinja2 mdx_smartypants, PyRSS2Gen
@@ -47,6 +47,12 @@ ENTRY_TIME_FORMAT = "%m/%d/%Y"
 #FORMAT should be a callable that takes in text
 #and returns formatted text
 FORMAT = lambda text: markdown.markdown(text, ['footnotes','smartypants',])
+# default URLEXT = ".html"
+# set URLEXT = "" if server recognizes .html URLs and can be linked-to without the extension part.
+URLEXT = ""
+# default PATHEXT = ""
+# set PATHEXT = "" if URLEXT = ".html" and vice versa.
+PATHEXT = ".html"
 RSS = PyRSS2Gen.RSS2(
     title = "Logbook",
     link = BASEURL + "rss.xml",
@@ -81,9 +87,7 @@ def get_tree(source):
                 'content': FORMAT(''.join(f.readlines()[1:]).decode('UTF-8')),
                 #'url': '/'.join([str(year), "%.2d" % month, "%.2d" % day, os.path.splitext(name)[0] + ".html"]),
                 # Uncheck the following line if you have no rewrite (URLs end with .html).
-                #'url': '/'.join([str(year), os.path.splitext(name)[0] + ".html"]),
-                # Comment the following line if you have no rewrite (URLs end without .html).
-                'url': '/'.join([str(year), os.path.splitext(name)[0]]),                
+                'url': '/'.join([str(year), os.path.splitext(name)[0] + URLEXT]),
                 'pretty_date': time.strftime(TIME_FORMAT, date),
                 'date': date,
                 'year': year,
@@ -101,9 +105,7 @@ def compare_entries(x, y):
     return result
 
 def write_file(url, data):
-    #path = DESTINATION + url 
-    # Comment the following line and uncomment the previous line if you have no rewrite support.
-    path = DESTINATION + url + ".html"
+    path = DESTINATION + url + PATHEXT
     dirs = os.path.dirname(path)
     if not os.path.isdir(dirs):
         os.makedirs(dirs)

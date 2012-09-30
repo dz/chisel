@@ -1,6 +1,6 @@
 # Chisel
 
-Written by [David Zhou][dz] in [python][py], forked and enhanced by [ckunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file.
+Written by [David Zhou][dz] in [python][py], forked and enhanced by [Chyetanya Kunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file.
 
 This fork includes the following additions and enhancements:
 
@@ -60,7 +60,7 @@ If you are using a Mac or Linux, then python comes pre-installed. In addition, y
 	
 #### On [Ubuntu][u] (Debian) linux:
 
-	$ sudo apt-get install pip-python
+	$ sudo apt-get install python-pip
 	Password:
 	$ sudo pip install jinja2 markdown mdx_smartypants PyRSS2Gen
 
@@ -229,7 +229,7 @@ Further, the date would need a fix to read as m/d/Y. But at least for now, it re
 [pt]: http://www.pocoo.org/ "Led by Georg Brandl and Armin Ronacher."
 [jg]: http://daringfireball.net/ "John Gruber"
 [p2]: http://pypi.python.org/pypi/PyRSS2Gen
-[ck]: http://log.ckunte.net/2012/chisel.html "Tinkering Chisel"
+[ck]: http://log.ckunte.net/2012/chisel "Tinkering Chisel"
 [rsync]: http://en.wikipedia.org/wiki/Rsync
 [git]: http://git-scm.com
 [rj]: https://github.com/ronjouch

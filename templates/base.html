@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
      <meta charset="utf-8">
-     <title>Logbook{%block title %}{% endblock %}</title>
+     <title>ckunte.net{%block title %}{% endblock %}</title>
      <meta name="author" content="Chyetanya Kunte">
      <meta name="description" content="A personal site of Chyetanya Kunte.">
      <link rel="apple-touch-icon-precomposed" href="/images/avatar.png" />
@@ -38,7 +38,7 @@
                     {% for href, caption, description in [
                         ('/colophon', 'Colophon', 'About this site.'), 
                         ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), 
-                        ('/rss.xml', 'RSS', 'Logbook')] -%}
+                        ('/rss', 'RSS', 'Logbook')] -%}
                         <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
                     {% endfor -%}
                     </ul>

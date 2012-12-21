@@ -28,7 +28,7 @@ import datetime
 #     /ckunte.github.com (the generated html site from post files)
 # the locations are used thus:
 #
-BASEURL = "http://log.ckunte.net/" #end with slash
+BASEURL = "http://ckunte.net/" #end with slash
 # The following tells chisel where to look for native posts:
 SOURCE = "../ckunte.github.com/posts/" #end with slash
 #  The following tells chisel where to generate site:
@@ -54,7 +54,7 @@ URLEXT = ""
 # set PATHEXT = "" if URLEXT = ".html" and vice versa.
 PATHEXT = ".html"
 RSS = PyRSS2Gen.RSS2(
-    title = "Logbook",
+    title = "ckunte.net",
     link = BASEURL + "rss.xml",
     description = "Offshore structures engineer",
     lastBuildDate = datetime.datetime.now(),

@@ -237,6 +237,6 @@ Further, the date would need a fix to read as m/d/Y. But at least for now, it re
 [u]: http://www.ubuntu.com/
 [m]: http://www.apple.com/macosx
 [pip]: http://pypi.python.org/pypi/pip
-[scr]: http://log.ckunte.net/images/chisel.png
-[log]: http://log.ckunte.net/
-[cu]: http://log.ckunte.net/2012/rewrite
+[scr]: http://ckunte.net/images/chisel.png
+[log]: http://ckunte.net/
+[cu]: http://ckunte.net/2012/rewrite

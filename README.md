@@ -10,7 +10,7 @@ This fork includes the following additions and enhancements:
 - Support for [title-less posts][tl] (like for links and quotes).
 - Support for Page titles in title tag for permalinks added in templates.
 - Supports [clean URLs][cu].
-- Send pings to various search engines to let them know that your blog has been updated via the lovely [Pingomatic][p].
+- Send pings to various search engines to let them know that your blog has been updated via the lovely [Pingomatic][p] (Hat-tip: [Ned Batchelder][nb]).
 
 ## Screenshot
 

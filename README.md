@@ -10,6 +10,7 @@ This fork includes the following additions and enhancements:
 - Support for [title-less posts][tl] (like for links and quotes).
 - Support for Page titles in title tag for permalinks added in templates.
 - Supports [clean URLs][cu].
+- Send pings to various search engines to let them know that your blog has been updated via the lovely [Pingomatic][p].
 
 ## Screenshot
 
@@ -219,7 +220,7 @@ Further, the date would need a fix to read as m/d/Y. But at least for now, it re
 
 ## I miss pinging my site via [Pingomatic][p]. How do I?
 
-Similar trick. Put the following script in a file, say `ping.py`, and run `python ping.py` -- Hat-tip to [Ned Batchelder][nb] for this lovely script (please do remember to change the title and URL in the script below):
+Put the following script (hat-tip: [Ned Batchelder][nb] for this lovely script) in a file, say `ping.py`, and run `python ping.py` (please do remember to change the title and URL in the script below):
 
 	import xmlrpclib
 
@@ -230,7 +231,7 @@ Similar trick. Put the following script in a file, say `ping.py`, and run `pytho
 	    )
 	print ret['message']
 
-## My blog is now powered by Chisel, but it feels like chore. How do I automate all this?
+## My blog is now powered by Chisel. How do I automate all this?
 
 Easy. Put this in a script (say, `log.sh`, for example) like the example below (do take note of folders, these are from my set-up, if yours is setup differently, then do make those changes in lines 3, 5, and 10 below):
 

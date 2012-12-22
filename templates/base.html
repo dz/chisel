@@ -5,12 +5,12 @@
      <title>ckunte.net{%block title %}{% endblock %}</title>
      <meta name="author" content="Chyetanya Kunte">
      <meta name="description" content="A personal site of Chyetanya Kunte.">
-     <link rel="apple-touch-icon-precomposed" href="/images/avatar.png" />
-     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
      <meta name="robots" content="index, follow, noarchive, noimageindex, noimageclick">
      <meta name="viewport" content="width=702">
+     <link rel="alternate" type="application/rss+xml" title="ckunte.net" href="/rss.xml">
+     <link rel="apple-touch-icon-precomposed" href="/images/avatar.png">
+     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
      <link rel="stylesheet" href="/css/style.css" type="text/css">
-     <link rel="alternate" type="application/rss+xml" title="Logbook" href="/rss.xml">
  	 <meta name="y_key" content="97c7f89953fc7f59">
  	 <meta name="google-site-verification" content="v-I00TV-8pMM0mspIOJAXlWwaEdkafJZPzS9LC3r3zc">
  	 <script type="text/javascript">
@@ -38,7 +38,7 @@
                     {% for href, caption, description in [
                         ('/colophon', 'Colophon', 'About this site.'), 
                         ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), 
-                        ('/rss', 'RSS', 'Logbook')] -%}
+                        ('/rss', 'RSS', 'ckunte.net')] -%}
                         <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
                     {% endfor -%}
                     </ul>
@@ -51,7 +51,7 @@
             {% endblock %}
         </div>
         <div id="footer">
-            <span class="navcenter">(c) Chyetanya Kunte</span>
+            <span class="navcenter">&copy; Chyetanya Kunte</span>
         </div>
     </div>
 </body>

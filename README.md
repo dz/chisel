@@ -217,6 +217,41 @@ to
 
 Further, the date would need a fix to read as m/d/Y. But at least for now, it reduces your edits to just changing dates. Or you could write a [shell script][ss] to chuck out needless information generated for Jekyll to suit Chisel.
 
+## I miss pinging my site via Pingomatic. How do I?
+
+Similar trick. Put the following script in a file, say `ping.py`, and run `python ping.py` (Hat-tip [Ned Batchelder][nb] (remember to change the title and URL in the script below):
+
+	import xmlrpclib
+
+	remoteServer = xmlrpclib.Server("http://rpc.pingomatic.com/RPC2")
+	ret = remoteServer.weblogUpdates.ping(
+	    "Title of your blog",
+	    "http://yourblogurl.com"
+	    )
+	print ret['message']
+
+## My blog is generated powrered by Chisel, but it feels like chore. How do I automate all this?
+
+Easy. Put this in a script (say, log.sh, for example) like the example below (do take note of folders, these are from my set-up, if yours is setup differently, then do make those changes in line 3, and line 5 below):
+
+	#!/usr/bin/env sh
+	echo ""
+	cd ~/Sites/chisel
+	python chisel.py
+	cd ~/Sites/ckunte.github.com
+	echo "Updating log.."
+	git add -A
+	git commit -m 'Updating log.'
+	git push -u origin master
+	cd ~/Sites/chisel
+	echo "Pinging Pingomatic.."
+	python ping.py
+	cd ~/
+	echo ""
+	echo "All done."
+
+When you're ready to generate and post it to your site, run `sh log.sh`, and your post(s) are published.
+
 [ss]: http://www.cyberciti.biz/faq/unix-linux-replace-string-words-in-many-files/
 [ep]: https://github.com/thomasf/exitwp
 [dz]: https://github.com/dz
@@ -240,3 +275,4 @@ Further, the date would need a fix to read as m/d/Y. But at least for now, it re
 [scr]: http://ckunte.net/images/chisel.png
 [log]: http://ckunte.net/
 [cu]: http://ckunte.net/2012/rewrite
+[nb]: http://nedbatchelder.com/blog/200406/pingomatic_and_xmlrpc.html "Ping-o-matic and xml-rpc"

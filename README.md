@@ -217,9 +217,9 @@ to
 
 Further, the date would need a fix to read as m/d/Y. But at least for now, it reduces your edits to just changing dates. Or you could write a [shell script][ss] to chuck out needless information generated for Jekyll to suit Chisel.
 
-## I miss pinging my site via Pingomatic. How do I?
+## I miss pinging my site via [Pingomatic][p]. How do I?
 
-Similar trick. Put the following script in a file, say `ping.py`, and run `python ping.py` (Hat-tip [Ned Batchelder][nb] (remember to change the title and URL in the script below):
+Similar trick. Put the following script in a file, say `ping.py`, and run `python ping.py` -- Hat-tip to [Ned Batchelder][nb] for this lovely script (please do remember to change the title and URL in the script below):
 
 	import xmlrpclib
 
@@ -230,9 +230,9 @@ Similar trick. Put the following script in a file, say `ping.py`, and run `pytho
 	    )
 	print ret['message']
 
-## My blog is generated powrered by Chisel, but it feels like chore. How do I automate all this?
+## My blog is now powered by Chisel, but it feels like chore. How do I automate all this?
 
-Easy. Put this in a script (say, log.sh, for example) like the example below (do take note of folders, these are from my set-up, if yours is setup differently, then do make those changes in line 3, and line 5 below):
+Easy. Put this in a script (say, `log.sh`, for example) like the example below (do take note of folders, these are from my set-up, if yours is setup differently, then do make those changes in lines 3, 5, and 10 below):
 
 	#!/usr/bin/env sh
 	echo ""
@@ -276,3 +276,4 @@ When you're ready to generate and post it to your site, run `sh log.sh`, and you
 [log]: http://ckunte.net/
 [cu]: http://ckunte.net/2012/rewrite
 [nb]: http://nedbatchelder.com/blog/200406/pingomatic_and_xmlrpc.html "Ping-o-matic and xml-rpc"
+[p]: http://pingomatic.com/

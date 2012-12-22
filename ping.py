@@ -1,11 +1,15 @@
 # encoding: utf-8
 #!/usr/bin/env python
-# Ned Batchelder ( http://nedbatchelder.com/ )
+
 import xmlrpclib
-pm = "http://rpc.pingomatic.com/RPC2"
-remoteServer = xmlrpclib.Server(pm)
-ret = remoteServer.weblogUpdates.ping(
-    "ckunte.net",
-    "http://ckunte.net"
-    )
+
+# Ping-o-matic the Pinging service:
+ps = "http://rpc.pingomatic.com/RPC2"
+
+# Your site's title and URL:
+title = "ckunte.net"
+url = "http://ckunte.net"
+
+remoteServer = xmlrpclib.Server(ps)
+ret = remoteServer.weblogUpdates.ping(title, url)
 print ret['message']

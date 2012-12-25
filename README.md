@@ -270,7 +270,7 @@ When you're ready to generate and post it to your site, run `sh log.sh`, and you
 [pt]: http://www.pocoo.org/ "Led by Georg Brandl and Armin Ronacher."
 [jg]: http://daringfireball.net/ "John Gruber"
 [p2]: http://pypi.python.org/pypi/PyRSS2Gen
-[ck]: http://log.ckunte.net/2012/chisel "Tinkering Chisel"
+[ck]: http://ckunte.net/2012/chisel "Tinkering Chisel"
 [rsync]: http://en.wikipedia.org/wiki/Rsync
 [git]: http://git-scm.com
 [rj]: https://github.com/ronjouch

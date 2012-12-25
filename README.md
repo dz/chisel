@@ -9,7 +9,6 @@ This fork includes the following additions and enhancements:
 - RSS feed generator script (Hat-tip: [Ronan Jouchet][rj]).
 - Support for Page titles in title tag for permalinks added in templates.
 - Supports [clean URLs][cu].
-- Support for [title-less posts][tl] (like for links and quotes) -- still a bit crufty.
 
 ## Screenshot
 
@@ -275,7 +274,6 @@ When you're ready to generate and post it to your site, run `sh log.sh`, and you
 [rsync]: http://en.wikipedia.org/wiki/Rsync
 [git]: http://git-scm.com
 [rj]: https://github.com/ronjouch
-[tl]: https://github.com/ckunte/chisel/blob/master/README.markdown#also-want-daringfireballnet-like-posts-for-quotes-and-links-without-titles
 [u]: http://www.ubuntu.com/
 [m]: http://www.apple.com/macosx
 [pip]: http://pypi.python.org/pypi/pip

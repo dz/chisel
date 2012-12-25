@@ -1,16 +1,15 @@
 # Chisel
 
-Written by [David Zhou][dz] in [python][py], forked and enhanced by [Chyetanya Kunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file.
+Written by [David Zhou][dz] in [python][py], forked and enhanced by [Chyetanya Kunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file. 
 
 This fork includes the following additions and enhancements:
 
 - Smartypants content parsing to emit typographically nicer quotes, proper em and en dashes, etc.
 - A shorter (just year based) permalink structure.
 - RSS feed generator script (Hat-tip: [Ronan Jouchet][rj]).
-- Support for [title-less posts][tl] (like for links and quotes).
 - Support for Page titles in title tag for permalinks added in templates.
 - Supports [clean URLs][cu].
-- Send pings to various search engines to let them know that your blog has been updated via the lovely [Pingomatic][p] (Hat-tip: [Ned Batchelder][nb]).
+- Support for [title-less posts][tl] (like for links and quotes) -- still a bit crufty.
 
 ## Screenshot
 
@@ -121,7 +120,7 @@ Open `chisel.py` in a text editor and have a look at the section Settings. You m
 
 ## Sample Entry
 
-`sample.markdown` (Note: Filenames shall not have spaces. Good examples: `hotel-california.markdown`, `i_love_cooking.markdown`, and so on):
+`sample.markdown` (Note: Filenames shall not have spaces. Good examples: `hotel-california.md`, `i_love_cooking.md`, and so on):
 
 	Title of the post
 	3/14/1879
@@ -218,18 +217,25 @@ to
 
 Further, the date would need a fix to read as m/d/Y. But at least for now, it reduces your edits to just changing dates. Or you could write a [shell script][ss] to chuck out needless information generated for Jekyll to suit Chisel.
 
-## I miss pinging my site via [Pingomatic][p]. How do I?
+## I miss pinging my site via Pingomatic. How do I?
 
-Put the following script (hat-tip: [Ned Batchelder][nb] for this lovely script) in a file, say `ping.py`, and run `python ping.py` (please do remember to change the title and URL in the script below):
+Create and save a bookmarklet via [Pingomatic][p]. Alternatively, put the following script (hat-tip: [Ned Batchelder][nb] for this script) in a file, say `ping.py`, and run `python ping.py` (please do remember to change the title and URL in the script below):
 
-	import xmlrpclib
+    # encoding: utf-8
+    #!/usr/bin/env python
 
-	remoteServer = xmlrpclib.Server("http://rpc.pingomatic.com/RPC2")
-	ret = remoteServer.weblogUpdates.ping(
-	    "Title of your blog",
-	    "http://yourblogurl.com"
-	    )
-	print ret['message']
+    import xmlrpclib
+
+    # Ping-o-matic the Pinging service:
+    ps = "http://rpc.pingomatic.com/RPC2"
+
+    # Your site's title and URL:
+    title = "ckunte.net"
+    url = "http://ckunte.net"
+
+    remoteServer = xmlrpclib.Server(ps)
+    ret = remoteServer.weblogUpdates.ping(title, url)
+    print ret['message']
 
 ## My blog is now powered by Chisel. How do I automate all this?
 

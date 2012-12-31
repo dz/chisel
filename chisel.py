@@ -124,7 +124,7 @@ def generate_homepage(f, e):
 @step
 def generate_rss(f, e):
     """Generate rss"""
-    for file in f[:10]:
+    for file in f[:HOME_SHOW]:
         RSS.items.append(PyRSS2Gen.RSSItem(title=file['title'], link=BASEURL + file['url'], description=file['content'], author="Chyetanya Kunte", guid = PyRSS2Gen.Guid(BASEURL + file['url']), pubDate=datetime.datetime(file['year'], file['month'], file['day'])))
     RSS.write_xml(open(DESTINATION + "rss.xml", "w"))
 

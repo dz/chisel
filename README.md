@@ -1,6 +1,6 @@
 # Chisel
 
-Written by [David Zhou][dz] in [python][py], forked and enhanced for his personal use by [Chyetanya Kunte][ck], [Chisel][ch] is an amazing blog engine -- all in just one file. 
+Written by [David Zhou][dz] in [python][py], forked and enhanced by [Chyetanya Kunte][ck] for his personal use, [Chisel][ch] is an amazing blog engine -- all in just one file. 
 
 This fork includes the following additions and enhancements:
 

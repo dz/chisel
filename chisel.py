@@ -117,9 +117,7 @@ def write_file(url, data):
 def generate_homepage(f, e):
     """Generate homepage"""
     template = e.get_template(TEMPLATES['home'])
-    #write_file("index.html", template.render(entries=f[:HOME_SHOW]))
-    # Comment the following line and uncomment the previous line if you have no rewrite support.
-    write_file("index", template.render(entries=f[:HOME_SHOW]))
+    write_file("index" + URLEXT, template.render(entries=f[:HOME_SHOW]))
 
 @step
 def generate_rss(f, e):
@@ -132,17 +130,13 @@ def generate_rss(f, e):
 def master_archive(f, e):
     """Generate master archive list of all entries"""
     template = e.get_template(TEMPLATES['archive'])
-    #write_file("archive.html", template.render(entries=f))
-    # Comment the following line and uncomment the previous line if you have no rewrite support.
-    write_file("archive", template.render(entries=f))
+    write_file("archive" + URLEXT, template.render(entries=f))
 
 @step
 def generate_colophon(f, e):
     """Generate an about page"""
     template = e.get_template(TEMPLATES['colophon'])
-    #write_file("colophon.html", template.render(entries=f))
-    # Comment the following line and uncomment the previous line if you have no rewrite support.
-    write_file("colophon", template.render(entries=f))
+    write_file("colophon" + URLEXT, template.render(entries=f))
 
 @step
 def detail_pages(f, e):

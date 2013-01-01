@@ -2,6 +2,7 @@
 
 {% block post %}
     {% for entry in entries %}
+
 	<div class="post">
  		<div class="labels">
  			<div class="date"><a href="/{{ entry.url }}">{{ entry.pretty_date }}</a></div>
@@ -14,6 +15,7 @@
 
     	<div class="post-footer">&nbsp;</div>
     </div>
+    
     {% endfor %}
 <div class="navleft">
 	&lsaquo;&nbsp;<a rel="prev prefetch" href="/archive">Archive</a>

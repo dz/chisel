@@ -41,6 +41,7 @@ TEMPLATES = {
     'detail': "detail.html",
     'archive': "archive.html",
     'colophon': "colophon.html",
+    '404': "404.html",
 }
 TIME_FORMAT = "%b %d, %Y"
 ENTRY_TIME_FORMAT = "%m/%d/%Y"
@@ -134,9 +135,15 @@ def master_archive(f, e):
 
 @step
 def generate_colophon(f, e):
-    """Generate an about page"""
+    """Generate a colophon page"""
     template = e.get_template(TEMPLATES['colophon'])
     write_file("colophon" + URLEXT, template.render(entries=f))
+
+@step
+def generate_404(f, e):
+    """Generate a 404 page"""
+    template = e.get_template(TEMPLATES['404'])
+    write_file("404" + URLEXT, template.render(entries=f))
 
 @step
 def detail_pages(f, e):

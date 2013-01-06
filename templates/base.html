@@ -1,58 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="utf-8">
-     <title>ckunte.net{%block title %}{% endblock %}</title>
-     <meta name="author" content="Chyetanya Kunte">
-     <meta name="description" content="A personal site of Chyetanya Kunte.">
-     <meta name="robots" content="index, follow, noarchive, noimageindex, noimageclick">
-     <meta name="viewport" content="width=702">
-     <link rel="alternate" type="application/rss+xml" title="ckunte.net" href="/rss.xml">
-     <link rel="apple-touch-icon-precomposed" href="/images/avatar.png">
-     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-     <link rel="stylesheet" href="/css/style.css" type="text/css">
- 	 <meta name="y_key" content="97c7f89953fc7f59">
- 	 <meta name="google-site-verification" content="v-I00TV-8pMM0mspIOJAXlWwaEdkafJZPzS9LC3r3zc">
- 	 <script type="text/javascript">
-       var _gaq = _gaq || [];
-       _gaq.push(['_setAccount', 'UA-52041-13']);
-       _gaq.push(['_setDomainName', 'ckunte.net']);
-       _gaq.push(['_trackPageview']);
-
-       (function() {
-         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
-     </script>
+ <meta charset="utf-8">
+ <title>ckunte.net{%block title %}{% endblock %}</title>
+ <meta name="description" content="A personal site of Chyetanya Kunte.">
+ <meta name="robots" content="index, follow, noarchive, noimageindex, noimageclick">
+ <meta name="viewport" content="width=702">
+ <link rel="shortcut icon apple-touch-icon-precomposed" href="/images/favicon.png" type="image/x-icon">
+ <link rel="stylesheet" href="/css/style.css" type="text/css">
+ <link rel="alternate" type="application/rss+xml" title="ckunte.net" href="/rss.xml">
+ <meta name="google-site-verification" content="v-I00TV-8pMM0mspIOJAXlWwaEdkafJZPzS9LC3r3zc">
+ <script type="text/javascript">
+   var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-52041-13']);
+   _gaq.push(['_setDomainName', 'ckunte.net']);_gaq.push(['_trackPageview']);
+   (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+ </script>
 </head>
 <body>
-    <div id="wrap">
-        <div id="content">
-            <h1><a href="/" title="ckunte.net Home"><img src="/images/avatar.png" alt=""></a></h1>
-            <p class="desc">fsck -vf /dev/hdc1 > log</p>
-            <p class="spacer">&nbsp;</p>
-            <div id="left">
-                <div id="nav">
-                    <ul>
-                    {% for href, caption, description in [
-                        ('/colophon', 'Colophon', 'About this site.'), 
-                        ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), 
-                        ('/rss', 'RSS', 'ckunte.net')] -%}
-                        <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
-                    {% endfor -%}
-                    </ul>
-                </div><!-- /nav -->
-            </div><!-- /left -->
-
-            {% block body %}
-                {% block post %}{% endblock %}
-                {% block footer %}{% endblock %}
-            {% endblock %}
-        </div>
-        <div id="footer">
-            <span class="navcenter">&copy; Chyetanya Kunte</span>
-        </div>
-    </div>
+ <div id="wrap">
+  <div id="content">
+   <h1><a href="/" title="ckunte.net Home"><img src="/images/avatar.png" alt=""></a></h1>
+   <p class="desc">fsck -vf /dev/hdc1 > log</p>
+   <p class="spacer">&nbsp;</p>
+    <div id="left">
+     <div id="nav">
+      <ul>
+       {% for href, caption, description in [('/colophon', 'Colophon', 'About this site.'), ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), ('/rss', 'RSS', 'ckunte.net')] -%}
+        <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
+       {% endfor -%}
+      </ul>
+     </div> <!-- /nav -->
+    </div> <!-- /left -->
+      {% block body %}
+          {% block post %}{% endblock %}
+          {% block footer %}{% endblock %}
+      {% endblock %}
+  </div> <!-- /content -->
+     <div id="footer"><span class="navcenter">&copy; Chyetanya Kunte</span></div>
+ </div> <!-- /wrap -->
 </body>
 </html>

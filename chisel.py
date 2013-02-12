@@ -28,12 +28,12 @@ import datetime
 #     /ckunte.github.com (the generated html site from post files)
 # the locations are used thus:
 #
-BASEURL = "http://ckunte.net/" #end with slash
+BASEURL = "/" #end with slash
 # The following tells chisel where to look for native posts:
-SOURCE = "../ckunte.github.com/posts/" #end with slash
+SOURCE = "../log.local/posts/" #end with slash
 #  The following tells chisel where to generate site:
-DESTINATION = "../ckunte.github.com/" #end with slash
-HOME_SHOW = 3 #numer of entries to show on homepage
+DESTINATION = "../log.local/" #end with slash
+HOME_SHOW = 30 #numer of entries to show on homepage
 TEMPLATE_PATH = "./templates/"
 TEMPLATE_OPTIONS = {}
 TEMPLATES = {
@@ -50,10 +50,10 @@ ENTRY_TIME_FORMAT = "%m/%d/%Y"
 FORMAT = lambda text: markdown.markdown(text, ['footnotes','smartypants',])
 # default URLEXT = ".html"
 # set URLEXT = "" if server recognizes .html URLs and can be linked-to without the extension part.
-URLEXT = ""
+URLEXT = ".html"
 # default PATHEXT = ""
 # set PATHEXT = "" if URLEXT = ".html" and vice versa.
-PATHEXT = ".html"
+PATHEXT = ""
 RSS = PyRSS2Gen.RSS2(
     title = "ckunte.net",
     link = BASEURL + "rss.xml",

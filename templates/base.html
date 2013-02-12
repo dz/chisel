@@ -3,22 +3,11 @@
 <head>
  <meta charset="utf-8">
  <title>ckunte.net{%block title %}{% endblock %}</title>
- <meta name="description" content="A personal site of ckunte.">
- <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, noimageclick">
+ <meta name="description" content="A personal site of Chyetanya Kunte.">
  <meta name="viewport" content="width=702">
  <link rel="shortcut icon apple-touch-icon-precomposed" href="/images/favicon.png" type="image/x-icon">
  <link rel="stylesheet" href="/css/style.css" type="text/css">
  <link rel="alternate" type="application/rss+xml" title="ckunte.net" href="/rss.xml">
- <meta name="google-site-verification" content="v-I00TV-8pMM0mspIOJAXlWwaEdkafJZPzS9LC3r3zc">
- <script type="text/javascript">
-   var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-52041-13']);
-   _gaq.push(['_setDomainName', 'ckunte.net']);_gaq.push(['_trackPageview']);
-   (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-   })();
- </script>
 </head>
 <body>
  <div id="wrap">
@@ -29,7 +18,7 @@
     <div id="left">
      <div id="nav">
       <ul>
-       {% for href, caption, description in [('/colophon', 'Colophon', 'About this site.'), ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), ('/rss', 'RSS', 'ckunte.net')] -%}
+       {% for href, caption, description in [('/colophon.html', 'Colophon', 'About this site.'), ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), ('/rss.xml', 'RSS', 'ckunte.net')] -%}
         <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
        {% endfor -%}
       </ul>

@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
  <meta charset="utf-8">
- <title>ckunte.net{%block title %}{% endblock %}</title>
- <meta name="description" content="A personal site of Chyetanya Kunte.">
+ <title>ckunte.net log{%block title %}{% endblock %}</title>
+ <meta name="description" content="A personal log of ckunte.">
  <meta name="viewport" content="width=702">
- <link rel="shortcut icon apple-touch-icon-precomposed" href="/images/favicon.png" type="image/x-icon">
- <link rel="stylesheet" href="/css/style.css" type="text/css">
- <link rel="alternate" type="application/rss+xml" title="ckunte.net" href="/rss.xml">
+ <link rel="shortcut icon apple-touch-icon-precomposed" href="/log/images/favicon.png" type="image/x-icon">
+ <link rel="stylesheet" href="/log/css/style.css" type="text/css">
+ <link rel="alternate" type="application/rss+xml" title="ckunte.net log" href="/log/rss.xml">
 </head>
 <body>
  <div id="wrap">
   <div id="content">
-   <h1><a href="/" title="ckunte.net Home"><img src="/images/avatar.png" alt=""></a></h1>
+   <h1><a href="/log/" title="ckunte.net log"><img src="/log/images/avatar.png" alt=""></a></h1>
    <p class="desc">fsck -vf /dev/hdc1 > log</p>
    <p class="spacer">&nbsp;</p>
     <div id="left">
      <div id="nav">
       <ul>
-       {% for href, caption, description in [('/colophon.html', 'Colophon', 'About this site.'), ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), ('/rss.xml', 'RSS', 'ckunte.net')] -%}
+       {% for href, caption, description in [('/log/colophon', 'Colophon', 'About this site.'), ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), ('/log/rss', 'RSS', 'ckunte.net log')] -%}
         <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
        {% endfor -%}
       </ul>
@@ -29,7 +29,7 @@
           {% block footer %}{% endblock %}
       {% endblock %}
   </div> <!-- /content -->
-     <div id="footer"><span class="navcenter">&copy; ckunte.net</span></div>
+     <div id="footer"><span class="navcenter">&copy; ckunte.net log</span></div>
  </div> <!-- /wrap -->
 </body>
 </html>

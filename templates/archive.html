@@ -9,7 +9,7 @@
    {% for month, month_list in year_list|groupby('month')|reverse %}
      {% for day, day_list in month_list|groupby('day')|reverse %}
        {% for entry in day_list %}
-         <p><small>{{ entry.pretty_date }}</small>&nbsp;&ndash;&nbsp;<a href="/{{ entry.url }}">{{ entry.title }}</a></p>
+         <p><small>{{ entry.pretty_date }}</small>&nbsp;&ndash;&nbsp;<a href="/log/{{ entry.url }}">{{ entry.title }}</a></p>
        {% endfor %}
      {% endfor %}
    {% endfor %}

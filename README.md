@@ -63,6 +63,10 @@ If you are using a Mac or Linux, then python comes pre-installed. In addition, y
 	Password:
 	$ sudo pip install jinja2 markdown mdx_smartypants PyRSS2Gen
 
+To update these packages, you may run the following:
+
+	$ sudo pip install --upgrade jinja2 markdown mdx_smartypants PyRSS2Gen
+
 ## Create a site structure on your computer (This is just an example)
 
 	$ mkdir ~/site

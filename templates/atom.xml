@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+    <title>ckunte.net log</title>
+    <link rel="self" type="application/atom+xml" href="http://ckunte.net/log/atom.xml" />
+    <link rel="alternate" type="text/html" href="http://ckunte.net/log/" />
+    <updated>{{ time }}</updated>
+    <id>{{ atom_id }}</id>
+
+    {% for entry in entries %}
+    <entry>
+        <title>{{ entry.title | escape }}</title>
+        <link rel="alternate" type="text/html" href="{{ "/log/" + entry.url }}" />
+        <updated>{{ entry.date }}</updated>
+        <id>{{ entry.filename }}</id>
+        <summary type="html">{{ entry.content | escape }}</summary>
+        <!-- <content type="html"></content> -->
+        <author>
+            <name>Chyetanya Kunte</name>
+        </author>
+    </entry>
+    {% endfor %}
+ 
+</feed>

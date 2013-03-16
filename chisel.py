@@ -42,7 +42,6 @@ TEMPLATES = {
     'archive': "archive.html",
     'colophon': "colophon.html",
     '404': "404.html",
-    'atom': "atom.xml",
 }
 TIME_FORMAT = "%b %d, %Y"
 ENTRY_TIME_FORMAT = "%m/%d/%Y"
@@ -115,26 +114,11 @@ def write_file(url, data):
     file.write(data.encode('UTF-8'))
     file.close()
 
-def write_feed(url, data):
-    path = DESTINATION + url
-    dirs = os.path.dirname(path)
-    if not os.path.isdir(dirs):
-        os.makedirs(dirs)
-    file = open(path, "w")
-    file.write(data.encode('UTF-8'))
-    file.close()
-    
 @step
 def generate_homepage(f, e):
     """Generate homepage"""
     template = e.get_template(TEMPLATES['home'])
-    write_file("index" + URLEXT, template.render(entries=f[:HOME_SHOW]))    
-
-@step
-def generate_feed(f, e):
-    """Generate Atom 1.0 feed"""
-    template = e.get_template(TEMPLATES['atom'])
-    write_feed("atom.xml", template.render(entries=f[:HOME_SHOW]))    
+    write_file("index" + URLEXT, template.render(entries=f[:HOME_SHOW]))
 
 @step
 def generate_rss(f, e):

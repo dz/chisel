@@ -30,7 +30,7 @@ import datetime
 #
 BASEURL = "http://ckunte.net/log/" #end with slash
 # The following tells chisel where to look for native posts:
-SOURCE = "../ckunte.github.com/log/posts/" #end with slash
+SOURCE = "../posts/" #end with slash
 #  The following tells chisel where to generate site:
 DESTINATION = "../ckunte.github.com/log/" #end with slash
 HOME_SHOW = 3 #numer of entries to show on homepage

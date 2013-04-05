@@ -8,12 +8,12 @@ This fork includes the following additions and enhancements:
 - A shorter (just year based) permalink structure.
 - RSS feed generator script using [PyRSS2Gen][p2] (Hat-tip: [Ronan Jouchet][rj]).
 - Support for Page titles in title tag for permalinks added in templates.
-- Supports [clean URLs][cu].
+- Supports clean URLs.
+- Works just fine with [MathJax][mj] for rendering using [LaTeX][tx] (math syntax). (Just remember to use `\newline` for multiple lines instead of `\n`.)
 
 ### Screenshot
 
 - [Screenshot][scr].
-- [Live site example][log].
 
 ## What it does not do
 
@@ -191,6 +191,40 @@ Then, add this below in chisel.py code:
 	    write_file("colophon.html", template.render(entries=f))
 
 
+### Clean URLs - Howto
+
+GitHub (via nginx rewrite I think) recognizes post files ending with `.html` or feed URLs ending with `.xml`. So, generate the files with these extensions as usual, but tell chisel to skip the extensions in permalinks using settings.
+
+The default setting in chisel now -- assuming server recognizes `.html` extension but does not require its inclusion when referring to a URL -- is as follows:
+
+    URLEXT = ""
+    PATHEXT = ".html"
+    
+This above is what I use. (Note that you should not set both to empty or `.html` strings in the above; this would lead to unintended results.)
+
+The fallback option is as follows:
+
+    URLEXT = ".html"
+    PATHEXT = ""
+
+This above setting would be suitable if your server does not recognize `.html` files if they are referred to without `.html` extension in URLs.
+
+#### Local server at home
+
+Since I also run chisel on my home server, here's what I had to do to enable rewrite using nginx web server:
+
+I edited the `default` file, which serves our local family site, in the following folder on my home server:
+
+    cd /etc/nginx/sites-enabled
+
+and added this following in it:
+
+    location / {
+        try_files $uri.html $uri/ =404;
+    }
+
+I now get clean URLs with these above settings.
+
 ### Can I use this to run a site locally, like offline?
 
 Yes! Just navigate to `~/site/www` and run the following to start a simple HTTP server in Terminal:
@@ -282,8 +316,9 @@ When you're ready to generate and post it to your site, run `sh log.sh`, and you
 [u]: http://www.ubuntu.com/
 [m]: http://www.apple.com/macosx
 [pip]: http://pypi.python.org/pypi/pip
-[scr]: http://ckunte.net/log/images/chisel.png
-[log]: http://ckunte.net/log/
+[scr]: http://static.tumblr.com/v335647/ZIqmks54l/chisel.png
 [cu]: http://ckunte.net/log/2012/rewrite
 [nb]: http://nedbatchelder.com/blog/200406/pingomatic_and_xmlrpc.html "Ping-o-matic and xml-rpc"
 [p]: http://pingomatic.com/
+[mj]: http://www.mathjax.org/
+[tx]: http://en.wikipedia.org/wiki/LaTeX

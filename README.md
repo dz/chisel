@@ -309,7 +309,7 @@ When you're ready to generate and post it to your site, run `sh log.sh`, and you
 [pt]: http://www.pocoo.org/ "Led by Georg Brandl and Armin Ronacher."
 [jg]: http://daringfireball.net/ "John Gruber"
 [p2]: http://pypi.python.org/pypi/PyRSS2Gen
-[ck]: http://ckunte.net/log/2012/chisel "Tinkering Chisel"
+[ck]: http://ckunte.net/
 [rsync]: http://en.wikipedia.org/wiki/Rsync
 [git]: http://git-scm.com
 [rj]: https://github.com/ronjouch
@@ -317,7 +317,6 @@ When you're ready to generate and post it to your site, run `sh log.sh`, and you
 [m]: http://www.apple.com/macosx
 [pip]: http://pypi.python.org/pypi/pip
 [scr]: http://static.tumblr.com/v335647/ZIqmks54l/chisel.png
-[cu]: http://ckunte.net/log/2012/rewrite
 [nb]: http://nedbatchelder.com/blog/200406/pingomatic_and_xmlrpc.html "Ping-o-matic and xml-rpc"
 [p]: http://pingomatic.com/
 [mj]: http://www.mathjax.org/

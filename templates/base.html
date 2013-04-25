@@ -19,7 +19,7 @@
     <div id="left">
      <div id="nav">
       <ul>
-       {% for href, caption, description in [('/log/colophon', 'Colophon', 'About this site.'), ('https://github.com/ckunte', 'Code', 'Feel free to fork.'), ('/log/rss.xml', 'RSS', 'ckunte.net log')] -%}
+       {% for href, caption, description in [('/log/colophon', 'Colophon', 'About this site.'), ('http://code.ckunte.net', 'Code', 'Feel free to fork.'), ('/log/rss.xml', 'RSS', 'ckunte.net log')] -%}
         <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
        {% endfor -%}
       </ul>

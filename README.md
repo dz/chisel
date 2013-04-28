@@ -1,6 +1,6 @@
 # Chisel
 
-Written by [David Zhou][dz] in [python][py], forked and enhanced by [Chyetanya Kunte][ck] for his personal use, [Chisel][ch] is an amazing blog engine -- all in just one file. 
+Written by [David Zhou][dz] in [python][py], forked and enhanced by [ckunte][ck] for his personal use, [Chisel][ch] is an amazing blog engine -- all in just one file. 
 
 This fork includes the following additions and enhancements:
 
@@ -13,6 +13,7 @@ This fork includes the following additions and enhancements:
 
 ### Screenshot
 
+- [Working site][log].
 - [Screenshot][scr].
 
 ## What it does not do
@@ -34,9 +35,9 @@ Chisel keeps it simple and stupid. And so, there is
 
 ## How it works
 
-1. Write your post in Markdown, save it as `post-title.markdown` or `post-title.md` in a designated folder, say, `posts`. 
+1. Write the post in Markdown, save it as `post-title.md` or `posttitle.md` (or post_title.md) in a designated folder, say, `posts`. 
 
-2. Run `python chisel.py` in a Terminal, and Chisel parses all `.markdown` files in `posts` folder to another designated folder, say `www` in html -- ready to be served using a web server.
+2. Run `python chisel.py` in a Terminal, and Chisel will parse all `.md`, `.markdown` or `.mdown` files in `posts` folder to another designated folder, say `www` in html -- ready to be served using a web server.
 
 3. Sync [See Note] all files and folders from the local `www` folder to the root of your web host, and you've got a fully functioning web site.
 
@@ -140,15 +141,6 @@ The very simple post entry format, shown above, is as follows:
 - Line 2: Enter date in m/d/Y format.
 - Line 3: Blank line.
 - Line 4: Content in Markdown here onward.
-
-### Also want daringfireball.net like posts (for quotes, and links) without titles?
-
-Pretty easy. Leave the first line blank in the above entry format. Jinja2 template (see `templates/detail.html`) below looks for a post title, and does not produce one, if it finds none. (The permalink URL is dependent on filename -- not the post title.)
-
-	{% if entry.title != '' %}
-		<h2>{{ entry.title }}</h2>
-	{% endif %}
-	{{ entry.content }}
 
 ### Adding Steps
 
@@ -267,8 +259,8 @@ Create and save a bookmarklet via [Pingomatic][p]. Alternatively, put the follow
     ps = "http://rpc.pingomatic.com/RPC2"
 
     # Your site's title and URL:
-    title = "ckunte.net"
-    url = "http://ckunte.net"
+    title = "ckunte.net log"
+    url = "http://log.ckunte.net"
 
     remoteServer = xmlrpclib.Server(ps)
     ret = remoteServer.weblogUpdates.ping(title, url)
@@ -316,8 +308,9 @@ When you're ready to generate and post it to your site, run `sh log.sh`, and you
 [u]: http://www.ubuntu.com/
 [m]: http://www.apple.com/macosx
 [pip]: http://pypi.python.org/pypi/pip
-[scr]: http://static.tumblr.com/v335647/ZIqmks54l/chisel.png
+[scr]: http://log.ckunte.net/images/chisel.png
 [nb]: http://nedbatchelder.com/blog/200406/pingomatic_and_xmlrpc.html "Ping-o-matic and xml-rpc"
 [p]: http://pingomatic.com/
 [mj]: http://www.mathjax.org/
 [tx]: http://en.wikipedia.org/wiki/LaTeX
+[log]: http://log.ckunte.net/

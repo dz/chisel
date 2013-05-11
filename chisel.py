@@ -24,7 +24,7 @@ import datetime
 # separate; don't have to be -- just my personal preference):
 # Sites
 #     /chisel (the generator)
-#     /ckunte.github.com/posts (markdown post files)
+#     /posts (in markdown stored offline)
 #     /ckunte.github.com (the generated html site from post files)
 # the locations are used thus:
 #

@@ -8,13 +8,12 @@
  <link rel="shortcut icon apple-touch-icon-precomposed" href="/log/images/favicon.png" type="image/x-icon">
  <link rel="stylesheet" href="/log/css/style.css" type="text/css">
  <link rel="alternate" type="application/rss+xml" title="ckunte.net log" href="/log/rss.xml">
- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-</head>
+ </head>
 <body>
  <div id="wrap">
   <div id="content">
    <h1><a href="/log/" title="ckunte.net log"><img src="/log/images/avatar.png" alt=""></a></h1>
-   <p class="desc">fsck -vf /dev/hdc1 &rsaquo; log</p>
+   <p class="desc">fsck -vf /dev/hdc1 &gt; log</p>
    <p class="spacer">&nbsp;</p>
     <div id="left">
      <div id="nav">
@@ -32,5 +31,25 @@
   </div> <!-- /content -->
      <div id="footer"><span class="navcenter">&copy; ckunte.net log</span></div>
  </div> <!-- /wrap -->
+ <script type="text/javascript">
+(function () {
+    var mjx = document.createElement('script');
+    mjx.type = 'text/javascript';
+    mjx.src = 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML';
+    mjx.async = true;
+    var k = document.getElementsByTagName('script')[0];
+    k.parentNode.insertBefore(mjx, k);
+})();
+</script>
+<script type="text/javascript">
+(function () {
+    var ma = document.createElement('script');
+    ma.type = 'text/javascript';
+    ma.src = 'http://m.ckunte.net/mint/?js';
+    ma.async = true;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ma, s);
+})();
+</script>
 </body>
 </html>

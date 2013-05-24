@@ -258,13 +258,14 @@ Create and save a bookmarklet via [Pingomatic][p]. Alternatively, put the follow
     # Ping-o-matic the Pinging service:
     ps = "http://rpc.pingomatic.com/RPC2"
 
-    # Your site's title and URL:
+    # Your site's title, url and rss:
     title = "ckunte.net log"
     url = "http://log.ckunte.net"
+    rss = "http://log.ckunte.net/rss"
 
     remoteServer = xmlrpclib.Server(ps)
-    ret = remoteServer.weblogUpdates.ping(title, url)
-    print ret['message']
+    ret = remoteServer.weblogUpdates.ping(title, url, rss)
+    print title, ret['message']
 
 ### My blog is now powered by Chisel. How do I automate all this?
 

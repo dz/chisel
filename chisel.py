@@ -85,11 +85,6 @@ def write_file(url, data):
     with open(path, "w") as file:
         file.write(data.encode('UTF-8'))
 
-def write_feed(url, data):
-    path = DESTINATION + url
-    with open(path, "w") as file:
-        file.write(data.encode('UTF-8'))
-
 @step
 def gen_rss(f, e):
     for file in f[:3]:

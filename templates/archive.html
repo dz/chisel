@@ -1,25 +1,17 @@
 {% extends "base.html" %}
-
+{% block title %}: Archive{% endblock %}
 {% block header %}
-    <h2>Archives</h2>
 {% endblock %}
 
-{% block main %}
-    {% for year, year_list in entries|groupby('year')|reverse %}
-        <h3>{{year}}</h3>
-        <ul class="year_block">
-            {% for month, month_list in year_list|groupby('month')|reverse %}
-            <li>
-                <h4>{{month}}</h4>
-                <ul class="month_block">
-                    {% for day, day_list in month_list|groupby('day')|reverse %}
-                        {% for entry in day_list %}
-                            <li><a href="/{{ entry.url }}">{{ entry.title }}</a> -- <small>{{ entry.pretty_date }}</small></li>
-                        {% endfor %}
-                    {% endfor %}
-                </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    {% endfor %}
+{% block post %}
+ <h2>Archive</h2>
+ {% for year, year_list in entries|groupby('year')|reverse %}
+   {% for month, month_list in year_list|groupby('month')|reverse %}
+     {% for day, day_list in month_list|groupby('day')|reverse %}
+       {% for entry in day_list %}
+         <p><small>{{ entry.pretty_date }}</small>&nbsp;&ndash;&nbsp;<a href="/log/{{ entry.url }}">{{ entry.title }}</a></p>
+       {% endfor %}
+     {% endfor %}
+   {% endfor %}
+ {% endfor %}
 {% endblock %}

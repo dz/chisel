@@ -1,43 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >        
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>nodnod.net</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/css/global.css" />
-    {% block extra_css %}{% endblock %}
-    <!--[if lte IE 6]>
-        <link rel="stylesheet" type="text/css" href="/css/ie6.css" />
-    <![endif]-->
-    <!--[if IE 7]>
-        <link rel="stylesheet" type="text/css" href="/css/ie7.css" />
-    <![endif]-->
-    <script src="/js/jquery.js" type="text/javascript"></script>
-    <script src="/js/global.js" type="text/javascript"></script>
-    {% block extra_js %}{% endblock %}
-    <script type="text/javascript">
-        document.write('<link rel="stylesheet" type="text/css" href="/css/js.css"');
-    </script>
-</head>
+ <meta charset="utf-8">
+ <title>ckunte.net log{%block title %}{% endblock %}</title>
+ <meta name="description" content="fsck -vf /dev/hdc1 &gt; log">
+ <meta name="viewport" content="width=702">
+ <link rel="shortcut icon apple-touch-icon-precomposed" href="/log/images/favicon.png" type="image/x-icon">
+ <link rel="stylesheet" href="/log/css/style.css" type="text/css">
+ <link rel="alternate" type="application/rss+xml" title="ckunte.net log" href="/log/rss.xml">
+ <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+ </head>
 <body>
-    <div id="wrapper">
-        {% block body %}
-            <div id="nav">
-                <p><a href="/">Home</a> | <a href="/archives.html">Archives</a></p>
-            </div>
-            <div id="header">
-                <h1>nodnod.net</h2>
-                {% block header %}{% endblock %}
-            </div>
-
-            <div id="main">
-                {% block main %}{% endblock %}
-            </div>
-
-            <div id="footer">
-                {% block footer %}{% endblock %}
-            </div>
-        {% endblock %}
-    </div>
+ <div id="wrap">
+  <div id="content">
+   <h1><a href="/log/" title="ckunte.net log"><img src="/log/images/avatar.png" alt=""></a></h1>
+   <p class="desc">fsck -vf /dev/hdc1 &gt; log</p>
+   <p class="spacer">&nbsp;</p>
+    <div id="left">
+     <div id="nav">
+      <ul>
+       {% for href, caption, description in [('/log/colophon', 'Colophon', 'About this site.'), ('http://code.ckunte.net', 'Code', 'Feel free to fork.'), ('/log/rss.xml', 'RSS', 'ckunte.net log')] -%}
+        <li><a title="{{ description }}" href="{{ href }}">{{ caption }}</a></li>
+       {% endfor -%}
+      </ul>
+     </div> <!-- /nav -->
+    </div> <!-- /left -->
+      {% block body %}
+          {% block post %}{% endblock %}
+          {% block footer %}{% endblock %}
+      {% endblock %}
+  </div> <!-- /content -->
+     <div id="footer"><span class="navcenter">&copy; ckunte.net log</span></div>
+ </div> <!-- /wrap -->
 </body>
 </html>

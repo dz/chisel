@@ -1,10 +1,17 @@
 {% extends "base.html" %}
-
-{% block header %}
-    <h2>{{ entry.title }}</h2>
-    <p>{{ entry.pretty_date }}</p>
-{% endblock %}
-
-{% block main %}
-    {{ entry.content }}
+{% block title %}: {{entry.title}} {% endblock -%}
+{% block post %}
+	<div class="post">
+ 	 <div class="labels">
+ 	 	<div class="date">&nbsp;</div>
+ 	 </div>
+ 	 <div class="regular">
+    	<h2>{{ entry.title }}</h2>
+       	{{ entry.content }}
+     </div>
+     <div class="post-footer"><a href="/log/{{ entry.url }}">{{ entry.pretty_date }}</a></div>
+    </div>
+	<div class="navleft">
+		&lsaquo;&nbsp;<a rel="prev prefetch" href="/log/archive">Archive</a>
+	</div>
 {% endblock %}

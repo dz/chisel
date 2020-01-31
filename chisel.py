@@ -1,13 +1,14 @@
-#!/usr/bin/python
-
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 # Chisel
 # David Zhou
 # 
 # Requires:
 # jinja2
 
-import sys, re, time, os, codecs
+import sys, re, time, os
 import jinja2, markdown
+from functools import cmp_to_key
 
 #Settings
 SOURCE = "./blog/" #end with slash
@@ -24,16 +25,16 @@ TIME_FORMAT = "%B %d, %Y"
 ENTRY_TIME_FORMAT = "%m/%d/%Y"
 #FORMAT should be a callable that takes in text
 #and returns formatted text
-FORMAT = lambda text: markdown.markdown(text, ['footnotes',]) 
+FORMAT = lambda text: markdown.markdown(text, extensions=['markdown.extensions.footnotes'])
 #########
 
 STEPS = []
 
 def step(func):
     def wrapper(*args, **kwargs):
-        print "Starting " + func.__name__ + "...",
+        print("\t\tGenerating %s..." %func.__name__, end="");
         func(*args, **kwargs)
-        print "Done."
+        print("done.")
     STEPS.append(wrapper)
     return wrapper
 
@@ -43,14 +44,14 @@ def get_tree(source):
         for name in fs:
             if name[0] == ".": continue
             path = os.path.join(root, name)
-            f = open(path, "rU")
-            title = f.readline().decode('UTF-8')
+            f = open(path, "r")
+            title = f.readline().strip('\n\t')
             date = time.strptime(f.readline().strip(), ENTRY_TIME_FORMAT)
             year, month, day = date[:3]
             files.append({
                 'title': title,
                 'epoch': time.mktime(date),
-                'content': FORMAT(''.join(f.readlines()[1:]).decode('UTF-8')),
+                'content': FORMAT(''.join(f.readlines()[1:])),
                 'url': '/'.join([str(year), "%.2d" % month, "%.2d" % day, os.path.splitext(name)[0] + ".html"]),
                 'pretty_date': time.strftime(TIME_FORMAT, date),
                 'date': date,
@@ -63,9 +64,9 @@ def get_tree(source):
     return files
 
 def compare_entries(x, y):
-    result = cmp(-x['epoch'], -y['epoch'])
+    result = (y['epoch'] > x['epoch']) - (y['epoch'] < x['epoch'])
     if result == 0:
-        return -cmp(x['filename'], y['filename'])
+        return (y['filename'] > x['filename']) - (y['filename'] < x['filename'])
     return result
 
 def write_file(url, data):
@@ -74,7 +75,7 @@ def write_file(url, data):
     if not os.path.isdir(dirs):
         os.makedirs(dirs)
     file = open(path, "w")
-    file.write(data.encode('UTF-8'))
+    file.write(data)
     file.close()
 
 @step
@@ -97,17 +98,16 @@ def detail_pages(f, e):
         write_file(file['url'], template.render(entry=file))
 
 def main():
-    print "Chiseling..."
-    print "\tReading files...",
-    files = sorted(get_tree(SOURCE), cmp=compare_entries)
+    print("Chiseling...");
+    print("\tReading files...", end="");
+    files = sorted(get_tree(SOURCE), key=cmp_to_key(compare_entries))
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_PATH), **TEMPLATE_OPTIONS)
-    print "Done."
-    print "\tRunning steps..."
+    print("done.")
+    print("\tRunning steps...");
     for step in STEPS:
-        print "\t\t",
         step(files, env)
-    print "\tDone."
-    print "Done."
+    print("\tdone.")
+    print("done.")
 
 if __name__ == "__main__":
     sys.exit(main())

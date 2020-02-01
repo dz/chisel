@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 
+{%- block header %}
+{% include 'header.html' %}
+{% endblock -%}
+
 {% block main %}
-    {% for entry in entries %}
-        <div class="entry">
-            <h2><a href="/{{ entry.url }}">{{ entry.title }}</a></h2>
-            <h3>{{ entry.pretty_date }}</h3>
-            <div class="entry_content">
-                {{ entry.content }}
-            </div>
-            <p class="permalink"><a href="/{{ entry.url}}">#permalink</a></p>
-        </div>
-    {% endfor %}
+  <article>
+  {%- for entry in entries %}
+    <h1><a href="/{{ entry.url }}">{{ entry.title }}</a></h1>
+    {{ entry.content }}
+    <time datetime="{{ entry.year }}-{{ entry.month }}-{{ entry.day }}">{{ entry.pretty_date }}</time>
+  {% endfor -%}    
+  </article>
 {% endblock %}
+
+{%- block footer %}
+{% include 'footer.html' %}
+{% endblock -%}

@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
-{% block header %}
-    <h2>{{ entry.title }}</h2>
-    <p>{{ entry.pretty_date }}</p>
-{% endblock %}
+{%- block header %}
+{% include 'header.html' %}
+{% endblock -%}
 
-{% block main %}
+{%- block main %}
+  <article>
+    <time datetime="{{ entry.year }}-{{ entry.month }}-{{ entry.day }}">{{ entry.pretty_date }}</time>
+    <h1><a href="/{{ entry.url }}">{{ entry.title | e }}</a></h1>
     {{ entry.content }}
-{% endblock %}
+  </article>
+{%- endblock %}
+
+{%- block footer %}
+{% include 'footer.html' %}
+{% endblock -%}

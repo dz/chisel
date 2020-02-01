@@ -1,0 +1,71 @@
+/* 
+  Inline styling inspired by 58 bytes of css to look great 
+  nearly everywhere: https://jrl.ninja/etc/1/
+*/
+    body {
+      font-family: Liberation Sans, Arial, sans-serif;
+      background-color: #fff;
+      line-height: 1.5;
+    }
+    main {
+      max-width: 70ch;
+      padding: 2ch;
+      margin: auto;
+    }
+    header, footer {
+      display: flex;
+      justify-content: space-between;
+      margin: 2.5ch auto; 
+      padding-left: 0;
+      padding-right: 0;
+      color: #888;
+    }
+    time {
+      color: #888;
+    }
+    img {
+      width: 100%;
+      min-width: 100%;
+      max-width: 70ch;
+    }
+    a {
+      color: #009;
+      text-decoration: none;
+      outline: 0;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a:visited {
+    color: #4B0082;
+  }
+    blockquote p {
+      margin-left: 3ch;
+      margin-right: 3ch;
+      color: deeppink;
+    }
+    ul.year_block > li, ul.month_block > li {
+      list-style: none;
+    }
+  hr {
+    border:none; 
+    text-align: center;
+  }
+  hr:after {
+    content: "* * *";
+    position: relative;
+    top:0.25rem;
+  }
+  .footnote hr {
+    margin:1.5rem auto 0.75rem 0;
+    width:36%;
+    border-color:#aaa;
+    border-style:solid;
+    border-width:1px 0 0;
+  }
+  .footnote hr:after {
+    content: none!important;
+  }
+  .footnote li {
+    font-size: 87%;
+  }

@@ -20,6 +20,7 @@ TEMPLATES = {
     'home': "home.html",
     'detail': "detail.html",
     'archive': "archive.html",
+    'rss': "feed.xml",
 }
 TIME_FORMAT = "%B %d, %Y"
 ENTRY_TIME_FORMAT = "%m/%d/%Y"
@@ -54,6 +55,7 @@ def get_tree(source):
                 'content': FORMAT(''.join(f.readlines()[1:])),
                 'url': '/'.join([str(year), "%.2d" % month, "%.2d" % day, os.path.splitext(name)[0] + ".html"]),
                 'pretty_date': time.strftime(TIME_FORMAT, date),
+                'rssdate': time.strftime("%a, %d %b %Y %H:%M:%S %z", date),
                 'date': date,
                 'year': year,
                 'month': month,
@@ -83,6 +85,12 @@ def generate_homepage(f, e):
     """Generate homepage"""
     template = e.get_template(TEMPLATES['home'])
     write_file("index.html", template.render(entries=f[:HOME_SHOW]))
+
+@step
+def generate_rss(f, e):
+    """Generate rss feed"""
+    template = e.get_template(TEMPLATES['rss'])
+    write_file("rss.xml", template.render(entries=f[:HOME_SHOW]))
 
 @step
 def master_archive(f, e):

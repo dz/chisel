@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+{% from 'site_settings.jinja2' import site_title, site_author, site_author_email, site_url -%}	
+<channel>
+<title>{{ site_title }}</title>
+<description>{{ site_title }} by {{ site_author }}</description>
+<atom:link href="{{ site_url }}/rss.xml" rel="self" type="application/rss+xml"/>
+<link>{{ site_url }}/</link>
+<language>en-us</language>
+{% for entry in entries %}
+<item>
+<title>{{ entry.title | e }}</title>
+<author>{{ site_author_email }}</author>
+<link>{{ site_url }}/{{ entry.url }}</link>
+<guid>{{ site_url }}/{{ entry.url }}</guid>
+<pubDate>{{ entry.rssdate }}GMT</pubDate>
+<description>
+{{ entry.content|e }}
+</description>
+</item>
+{% endfor %}
+</channel>
+</rss>

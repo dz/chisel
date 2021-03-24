@@ -1,0 +1,32 @@
+{# Footer navigation begins here #}
+  {%- for entry in entries %}
+    {%- if entry.url == curr %}
+      {%- if loop.index0 > 0 %}
+        {%- set next = entries[loop.index0-1].url %}
+        {%- set nexttitle = entries[loop.index0-1].title %}
+      {%- else %}
+        {%- set next = None %}
+        {%- set nexttitle = None %}
+      {%- endif %}
+      {%- if loop.index0+1 < total %}
+        {%- set prev = entries[loop.index0+1].url %}
+        {%- set prevtitle = entries[loop.index0+1].title %}
+      {%- else %}
+        {%- set prev = None %}
+        {%- set prevtitle = None %}
+      {%- endif %}
+      <footer>
+        {%- if prev and next %}
+        <span><a accesskey="j" title="{{prevtitle}}" href="/{{ prev }}">&larr; Prev</a></span>
+        <span><a accesskey="k" title="{{nexttitle}}" href="/{{ next }}">Next &rarr;</a></span>
+        {%- elif not next %}
+        <span><a accesskey="j" title="{{prevtitle}}" href="/{{ prev }}">&larr; Prev</a></span>
+        <span>&nbsp;</span>
+        {%- elif not prev %}
+        <span>&nbsp;</span>
+        <span><a accesskey="k" title="{{nexttitle}}" href="/{{ next }}">Next &rarr;</a></span>
+        {%- endif %}
+      </footer>        
+    {%- endif %}
+  {%- endfor %}
+{# Footer navigation ends here #}

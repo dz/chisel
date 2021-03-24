@@ -5,11 +5,14 @@
 {% endblock -%}
 
 {%- block main %}
+  {% set curr = entry.url %}
+  {% set total = entries | count %}
   <article>
     <time datetime="{{ entry.year }}-{{ entry.month }}-{{ entry.day }}">{{ entry.pretty_date }}</time>
     <h1><a href="/{{ entry.url }}">{{ entry.title | e }}</a></h1>
     {{ entry.content }}
   </article>
+  {% include 'nav.html' %}
 {%- endblock %}
 
 {%- block footer %}

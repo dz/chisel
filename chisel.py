@@ -1,7 +1,8 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Chisel
 # David Zhou
+# https://github.com/dz/chisel
 # 
 # Requires:
 # jinja2

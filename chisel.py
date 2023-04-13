@@ -10,10 +10,10 @@ import sys, re, time, os
 import jinja2, markdown
 from functools import cmp_to_key
 
-#Settings
+# Settings
 SOURCE = "./blog/" #end with slash
 DESTINATION = "./export/" #end with slash
-HOME_SHOW = 15 #numer of entries to show on homepage
+HOME_SHOW = 15 #number of entries to show on homepage
 TEMPLATE_PATH = "./templates/"
 TEMPLATE_OPTIONS = {}
 TEMPLATES = {
@@ -22,8 +22,8 @@ TEMPLATES = {
     'archive': "archive.html",
     'rss': "feed.xml",
 }
-TIME_FORMAT = "%B %d, %Y"
-ENTRY_TIME_FORMAT = "%m/%d/%Y"
+TIME_FORMAT = "%B %d, %Y" # "Month DD, YYYY"
+ENTRY_TIME_FORMAT = "%Y-%m-%d" # "YYYY-MM-DD"
 #FORMAT should be a callable that takes in text
 #and returns formatted text
 FORMAT = lambda text: markdown.markdown(text, extensions=['markdown.extensions.footnotes'])
